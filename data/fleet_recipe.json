@@ -1,5 +1,5 @@
 {
-  "measured_growth": 0.0813,
+  "measured_growth": 0.0815,
   "coverage": 0.9,
   "backup": 1,
   "plan_year": 2027,
@@ -11,27 +11,27 @@
         "core_fleet": 6,
         "backup": 1,
         "fleet": 7,
-        "covered_share": 0.983,
+        "covered_share": 0.966,
         "max_day": 6,
         "median_day": 4,
-        "days_needing_rental": 1,
-        "weight_bound_days": 0,
+        "days_needing_rental": 2,
+        "weight_bound_days": 3,
         "distribution": [
           {
             "trucks": 3,
-            "days": 8
+            "days": 7
           },
           {
             "trucks": 4,
-            "days": 41
+            "days": 37
           },
           {
             "trucks": 5,
-            "days": 9
+            "days": 13
           },
           {
             "trucks": 6,
-            "days": 1
+            "days": 2
           }
         ]
       },
@@ -41,15 +41,19 @@
         "core_fleet": 2,
         "backup": 1,
         "fleet": 3,
-        "covered_share": 1.0,
-        "max_day": 1,
+        "covered_share": 0.983,
+        "max_day": 2,
         "median_day": 1,
-        "days_needing_rental": 0,
+        "days_needing_rental": 1,
         "weight_bound_days": 0,
         "distribution": [
           {
             "trucks": 1,
-            "days": 59
+            "days": 58
+          },
+          {
+            "trucks": 2,
+            "days": 1
           }
         ]
       }
@@ -65,19 +69,19 @@
         "max_day": 5,
         "median_day": 4,
         "days_needing_rental": 0,
-        "weight_bound_days": 4,
+        "weight_bound_days": 2,
         "distribution": [
           {
             "trucks": 3,
-            "days": 15
+            "days": 14
           },
           {
             "trucks": 4,
-            "days": 53
+            "days": 50
           },
           {
             "trucks": 5,
-            "days": 24
+            "days": 28
           }
         ]
       },
@@ -95,11 +99,11 @@
         "distribution": [
           {
             "trucks": 1,
-            "days": 57
+            "days": 50
           },
           {
             "trucks": 2,
-            "days": 35
+            "days": 42
           }
         ]
       }
@@ -111,15 +115,15 @@
         "core_fleet": 6,
         "backup": 1,
         "fleet": 7,
-        "covered_share": 0.989,
-        "max_day": 6,
+        "covered_share": 1.0,
+        "max_day": 5,
         "median_day": 4,
-        "days_needing_rental": 1,
-        "weight_bound_days": 6,
+        "days_needing_rental": 0,
+        "weight_bound_days": 1,
         "distribution": [
           {
             "trucks": 2,
-            "days": 2
+            "days": 1
           },
           {
             "trucks": 3,
@@ -127,15 +131,11 @@
           },
           {
             "trucks": 4,
-            "days": 63
+            "days": 64
           },
           {
             "trucks": 5,
-            "days": 10
-          },
-          {
-            "trucks": 6,
-            "days": 1
+            "days": 11
           }
         ]
       },
@@ -145,19 +145,15 @@
         "core_fleet": 2,
         "backup": 1,
         "fleet": 3,
-        "covered_share": 0.989,
-        "max_day": 2,
+        "covered_share": 1.0,
+        "max_day": 1,
         "median_day": 1,
-        "days_needing_rental": 1,
+        "days_needing_rental": 0,
         "weight_bound_days": 0,
         "distribution": [
           {
             "trucks": 1,
-            "days": 91
-          },
-          {
-            "trucks": 2,
-            "days": 1
+            "days": 92
           }
         ]
       }
@@ -169,11 +165,11 @@
         "core_fleet": 9,
         "backup": 1,
         "fleet": 10,
-        "covered_share": 0.984,
+        "covered_share": 0.992,
         "max_day": 11,
         "median_day": 7,
-        "days_needing_rental": 2,
-        "weight_bound_days": 0,
+        "days_needing_rental": 1,
+        "weight_bound_days": 1,
         "distribution": [
           {
             "trucks": 4,
@@ -181,23 +177,19 @@
           },
           {
             "trucks": 5,
-            "days": 16
+            "days": 15
           },
           {
             "trucks": 6,
-            "days": 36
+            "days": 38
           },
           {
             "trucks": 7,
-            "days": 53
+            "days": 50
           },
           {
             "trucks": 8,
-            "days": 13
-          },
-          {
-            "trucks": 9,
-            "days": 1
+            "days": 16
           },
           {
             "trucks": 11,
@@ -219,11 +211,11 @@
         "distribution": [
           {
             "trucks": 1,
-            "days": 79
+            "days": 107
           },
           {
             "trucks": 2,
-            "days": 43
+            "days": 15
           }
         ]
       }

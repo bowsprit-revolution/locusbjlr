@@ -6,7 +6,7 @@ Run:  python3 data/generate.py
 Writes: data/stores.csv, data/history_daily.csv, data/orders_normal.csv,
         data/orders_peak.csv, data/fleet_recipe.json, app/data.js
 """
-import csv, json, math, random
+import csv, json, math, os, random
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -28,10 +28,12 @@ VEHICLES = {
 }
 SHIFT = {"start_min": 7 * 60, "end_min": 17 * 60}   # 7 AM - 5 PM
 SCENARIOS = {
-    "normal": {"label": "Normal day (Tue 9 Feb 2027)", "date": "2027-02-09", "speed_kmh": 18, "extra_service_min": 0,
-               "fleet_period": "Jan–Feb"},
-    "peak":   {"label": "Peak day (Tue 14 Dec 2027)",   "date": "2027-12-14", "speed_kmh": 14, "extra_service_min": 5,
-               "fleet_period": "Sep–Dec"},
+    # "busy" lifts order rates above a typical day for that date, so each sample day is a busy day of
+    # the kind the recipe sizes for (the 90% day), not an average one.
+    "normal": {"label": "Busy normal day (Tue 9 Feb 2027)", "date": "2027-02-09", "speed_kmh": 18, "extra_service_min": 0,
+               "fleet_period": "Jan–Feb", "busy": float(os.environ.get("BUSY_NORMAL", 1.1))},
+    "peak":   {"label": "Busy peak day (Tue 14 Dec 2027)",   "date": "2027-12-14", "speed_kmh": 14, "extra_service_min": 5,
+               "fleet_period": "Sep–Dec", "busy": float(os.environ.get("BUSY_PEAK", 1.1))},
 }
 SERVICE_MIN = {"sari-sari": 15, "grocer": 30}
 ROAD_FACTOR = 1.4
@@ -118,7 +120,8 @@ def make_history(stores):
         m = d.month
         spike = 1.5 if idx in spikes else 1.0
         p_order = min(0.95, ORDER_PROB * DRY_SEASON[m] * WEEKDAY[d.weekday()] * g * spike)
-        q_ice = min(0.95, ICE_SHARE * FROZEN_SEASON[m])
+        # ice cream follows its own calendar, not the dry-goods peak: divide out the dry season factor
+        q_ice = min(0.95, ICE_SHARE * FROZEN_SEASON[m] / DRY_SEASON[m])
         dry_stops = dry_tot = dry_svc = fro_stops = fro_tot = fro_svc = 0
         for s in stores:
             if random.random() >= p_order:
@@ -205,8 +208,8 @@ def make_day(stores, scen_key, growth):
     rng = random.Random({"normal": 11, "peak": 29}[scen_key])
     m = int(sc["date"][5:7])
     g = (1 + growth) ** (PLAN_YEAR - HISTORY_END.year)
-    p = min(0.95, ORDER_PROB * DRY_SEASON[m] * WEEKDAY[date.fromisoformat(sc["date"]).weekday()] * g)
-    q_ice = min(0.95, ICE_SHARE * FROZEN_SEASON[m])
+    p = min(0.95, ORDER_PROB * DRY_SEASON[m] * WEEKDAY[date.fromisoformat(sc["date"]).weekday()] * g * sc["busy"])
+    q_ice = min(0.95, ICE_SHARE * FROZEN_SEASON[m] / DRY_SEASON[m])
     orders = []
     for s in stores:
         if rng.random() >= p:

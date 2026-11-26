@@ -60,8 +60,7 @@ The last row is the demo's main point: the normal-season fleet can't cope with a
 
 ## Open items
 
-- Rounding in step 6: round up (current code) or to the nearest whole vehicle. BJ to decide.
-- With the new step 6 the fleet has more spare vehicles on the sample days, so the app reads "too big" there. Either the sample days or the "too big" test need adjusting once rounding is settled.
+- Type A on the peak day reads "too big": rounding growth up on a small fleet (2 vans x 1.08 = 2.16, so 3, plus 1 backup = 4) gives 2 spare vans on a day that needs 2. Kept as found; BJ to decide how to present it.
 
 ## Nov 26, 2026
 
@@ -69,3 +68,7 @@ The last row is the demo's main point: the normal-season fleet can't cope with a
 - Decided with BJ: no AI inside the app; host it on GitHub Pages.
 - Tried a claude.ai artifact as the app link. Artifacts block images from other sites, so the street map would not show there. GitHub Pages was chosen instead.
 - Step 6 (growth) changed to BJ's version: size the fleet on last year's days only, then add the growth measured over the 5 years (8.1%), then the backup. Previously every past year was scaled up before counting. New fleets (rounding up): Jan–Feb A 3, B 7; Mar–May A 4, B 7; Jun–Aug A 3, B 7; Sep–Dec A 4, B 10.
+- BJ confirmed step 6 rounds up.
+- Sample days changed to busy days (order rates 10% above a typical day for that date), since the recipe sizes the fleet for the busy end of the season (the 90% day), not the average day. Normal day: 111 orders; peak day: 163 orders.
+- Fixed the synthetic history so ice cream follows its own calendar (Mar–May peak) instead of rising with the dry-goods peak in Sep–Dec, as BJ's calendar says.
+- Results with the recipe fleets: normal day (A 3, B 7): both about right, 137 of 137 deliveries. Peak day (A 4, B 10): Type B about right, 185 of 185 deliveries; Type A too big (2 of 4 vans idle). Peak day with the normal-season fleet (A 3, B 7): Type B too small, 25 deliveries missed.

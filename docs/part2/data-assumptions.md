@@ -19,6 +19,7 @@ The brief asks for ~100 orders. A real distributor serving ~8,000 stores would g
 - Alternative: treat the 100 as the whole distributor's day and don't address scale. This is simpler but easier for the panel to poke at.
 
 **A3. Which day to show [pick]**
+- *Update Nov 26:* both sample days are busy days (order rates 10% above a typical day for that date), because the recipe sizes the fleet for the busy end of each season.
 - **Recommended: two scenarios with a toggle.** A normal day (February) and a peak day (mid-December), run on the same fleet, so the planner sees "fine on a normal day, too small on peak" (or the reverse).
 - Alternative: one normal day only.
 
