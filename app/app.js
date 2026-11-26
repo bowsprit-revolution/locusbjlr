@@ -5,6 +5,8 @@
   const peso = n => "₱" + Math.round(n).toLocaleString("en-PH");
   const pct = n => Math.round(n * 100) + "%";
   const $ = id => document.getElementById(id);
+  const hhmm = m => { const h = Math.floor(m / 60), mm = Math.round(m % 60); return `${((h + 11) % 12) + 1}:${String(mm).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}`; };
+  const vname = v => (v.type === "A" ? "Van " : "Truck ") + v.id.slice(1);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
   const recipeFleet = s => { const p = D.recipe.periods[D.scenarios[s].fleet_period]; return { A: p.A.fleet, B: p.B.fleet }; };
 
@@ -60,7 +62,9 @@
       const color = colorFor(v);
       const pts = [[D.depot.lat, D.depot.lon]].concat(v.stops.map(s => [s.job.order.lat, s.job.order.lon]), [[D.depot.lat, D.depot.lon]]);
       L.polyline(pts, { color, weight: 2.5, opacity: 0.9, dashArray: v.type === "A" ? "6 5" : null }).addTo(layer);
-      v.stops.forEach(s => L.circleMarker([s.job.order.lat, s.job.order.lon], { radius: 4.5, color: "#FBFCF9", weight: 1.5, fillColor: color, fillOpacity: 1 }).bindTooltip(s.job.order.name).addTo(layer));
+      v.stops.forEach((s, n) => { const o = s.job.order;
+        L.circleMarker([o.lat, o.lon], { radius: 4.5, color: "#FBFCF9", weight: 1.5, fillColor: color, fillOpacity: 1 })
+          .bindTooltip(`<b>${vname(v)} · stop ${n + 1} of ${v.stops.length}</b><br>${o.name}<br>${s.job.kind === "frozen" ? "Ice cream" : "Dry goods"}: ${Math.round(s.job.kg)} kg<br>Wants delivery ${hhmm(o.window_start)}–${hhmm(o.window_end)}<br>Arrives ${hhmm(s.start)}${s.late ? ` · ${Math.round(s.late)} min late` : ""}`).addTo(layer); });
     });
     res.unserved.forEach(j => L.circleMarker([j.order.lat, j.order.lon], { radius: 7, color: css("--crit"), weight: 3, fillColor: "#FBFCF9", fillOpacity: 1 }).bindTooltip("Missed: " + j.order.name).addTo(layer));
     map.fitBounds(L.latLngBounds([[D.depot.lat, D.depot.lon]].concat(D.orders[st.s].map(o => [o.lat, o.lon]))), { padding: [30, 30] });
