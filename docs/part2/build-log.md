@@ -60,7 +60,7 @@ The last row is the demo's main point: the normal-season fleet can't cope with a
 
 ## Open items
 
-- Type A on the peak day reads "too big": rounding growth up on a small fleet (2 vans x 1.08 = 2.16, so 3, plus 1 backup = 4) gives 2 spare vans on a day that needs 2. Kept as found; BJ to decide how to present it.
+- Type A on the peak day reads "too big": rounding growth up on a small fleet (2 vans x 1.08 = 2.16, so 3, plus 1 backup = 4) gives 2 spare vans on a day that needs 2. BJ decided (Nov 26) to keep it and present it as a finding: the prototype catching what the recipe alone cannot.
 
 ## Nov 26, 2026
 
