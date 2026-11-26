@@ -80,3 +80,9 @@ The last row was already the demo's main point: the normal-season fleet can't co
 - Applied Ben Joseph Ricafrente's branding to the app, the deck and the Part 1 PDF. Palette: Bone #C8C6AF, Muted Teal #95A78D, Rosy Taupe #BD897E, Vibrant Coral #F87666, with light sage tints as backgrounds. Fonts: Work Sans for titles and labels, Source Serif 4 for body text (bundled in `app/vendor/fonts` with their OFL licences, so the app needs no font CDN). Icons are flat duotone (teal and coral).
 - Ben Joseph Ricafrente picked the look from three mockups (Warm paper, Sage, Blush) and the icon style from two (line + tint, flat duotone).
 - Route colours were re-picked to sit with the palette and checked for colour-blind separation and contrast against the map background.
+- Made the app easier to follow for someone with no context, at Ben Joseph Ricafrente's request ("the prototype should also assume that the reader has no context"):
+  - The title asks the question the app answers: "Is this fleet the right size?"
+  - A context strip explains the situation, the question and how to read the colours.
+  - Three numbered buttons replace the controls and follow the demo: normal day, peak day with the normal fleet, peak day with the recipe fleet. Each shows one sentence on what is being tested. The + / − fleet controls moved into a closed "Try your own fleet" panel.
+  - The verdict is the headline, in plain words, above the five measures from the brief (vehicles used, time on the road, distance, on-time rate, cost).
+  - Vehicles are named in plain words everywhere ("refrigerated van" and "dry truck"; Van 1, Truck 1). The map has a legend, the vehicle list shows a fill bar, and idle vehicles are grouped on one line. The assumptions moved into an "About this data" panel.

@@ -6,9 +6,31 @@
   const pct = n => Math.round(n * 100) + "%";
   const hhmm = m => { const h = Math.floor(m / 60), mm = Math.round(m % 60); return `${((h + 11) % 12) + 1}:${String(mm).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}`; };
   const $ = id => document.getElementById(id);
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
-  const state = { scenario: "normal", fleet: { A: 0, B: 0 }, active: null };
+  const NAMES = {
+    A: { one: "van", many: "vans", title: "Refrigerated vans", goods: "ice cream" },
+    B: { one: "truck", many: "trucks", title: "Dry trucks", goods: "dry-goods" },
+  };
+  const vname = v => (v.type === "A" ? "Van " : "Truck ") + v.id.slice(1);
+
   const recipeFleet = s => { const p = D.recipe.periods[D.scenarios[s].fleet_period]; return { A: p.A.fleet, B: p.B.fleet }; };
+  const nOrders = s => D.orders[s].length;
+  const dayName = s => D.scenarios[s].label.replace(/^Busy /, "busy ").replace(/\s*\(.*\)/, "");
+  const dateOf = s => (D.scenarios[s].label.match(/\((.*)\)/) || [, ""])[1];
+  const fleetText = f => `${plural(f.A, "van", "vans")} and ${plural(f.B, "truck", "trucks")}`;
+
+  // The three demo steps.
+  const STEPS = [
+    { title: "Normal day", sub: "Normal-season fleet", scenario: "normal", fleetFrom: "normal",
+      caption: () => `A busy normal day (${dateOf("normal")}), ${nOrders("normal")} orders. The recipe's fleet for ${D.scenarios.normal.fleet_period}: ${fleetText(recipeFleet("normal"))}, each including 1 backup.` },
+    { title: "Peak day, normal fleet", sub: "What if nothing changes?", scenario: "peak", fleetFrom: "normal",
+      caption: () => `A busy peak-season day (${dateOf("peak")}), ${nOrders("peak")} orders, still served by the normal-season fleet of ${fleetText(recipeFleet("normal"))}.` },
+    { title: "Peak day, recipe fleet", sub: "Peak-season fleet", scenario: "peak", fleetFrom: "peak",
+      caption: () => `The same peak day, with the recipe's fleet for ${D.scenarios.peak.fleet_period}: ${fleetText(recipeFleet("peak"))}, each including 1 backup.` },
+  ];
+
+  const state = { step: 0, scenario: "normal", fleet: recipeFleet("normal"), active: null };
 
   // ---------- map
   const map = L.map("map", { scrollWheelZoom: false, zoomSnap: 0.25 }).setView([D.depot.lat, D.depot.lon], 14);
@@ -22,18 +44,28 @@
     return css(SERIES[slot]);
   }
 
+  // ---------- steps
+  function renderSteps() {
+    $("steps").innerHTML = STEPS.map((s, i) =>
+      `<button class="step" role="radio" aria-checked="${state.step === i}" data-i="${i}"><span class="step-n">${i + 1}</span><span class="step-t"><b>${s.title}</b><small>${s.sub}</small></span></button>`).join("");
+    document.querySelectorAll("#steps .step").forEach(b => b.addEventListener("click", () => selectStep(Number(b.dataset.i))));
+    const s = STEPS[state.step];
+    $("caption").textContent = s ? s.caption() : `Your own fleet on the ${dayName(state.scenario)}: ${fleetText(state.fleet)}.`;
+  }
+
+  function selectStep(i) {
+    const s = STEPS[i];
+    state.step = i; state.scenario = s.scenario; state.fleet = recipeFleet(s.fleetFrom); state.active = null;
+    run();
+  }
+
   // ---------- render
   function run() {
     $("fleet-A").textContent = state.fleet.A; $("fleet-B").textContent = state.fleet.B;
-    const rf = recipeFleet(state.scenario), per = D.scenarios[state.scenario].fleet_period;
-    for (const t of ["A", "B"]) {
-      const p = D.recipe.periods[per][t];
-      $("hint-" + t).textContent = `Recipe for ${per}: ${p.fleet} (${p.core_fleet} + ${p.backup} backup)`;
-    }
-    $("scenario-hint").textContent = D.scenarios[state.scenario].label + " · " + D.orders[state.scenario].length + " orders";
+    document.querySelectorAll("#scenario button").forEach(x => x.setAttribute("aria-checked", String(x.dataset.s === state.scenario)));
     const res = P.plan(D, state.scenario, state.fleet);
     state.res = res;
-    renderVerdicts(res); renderKpis(res); renderMap(res); renderRoutes(res);
+    renderSteps(); renderAnswer(res); renderKpis(res); renderMap(res); renderRoutes(res);
     fitMap();
   }
 
@@ -43,91 +75,93 @@
   }
 
   function verdictFor(code, bt) {
-    const name = code === "A" ? "Type A vans (ice cream)" : "Type B trucks (dry goods)";
-    const backup = D.recipe.backup;
+    const N = NAMES[code], backup = D.recipe.backup;
     if (bt.unserved > 0 || bt.late > 0) {
       const bits = [];
-      if (bt.unserved) bits.push(`${bt.unserved} deliveries can't be made`);
+      if (bt.unserved) bits.push(`${bt.unserved} of ${bt.jobs} ${N.goods} deliveries can't be made`);
       if (bt.late) bits.push(`${bt.late} arrive late`);
-      return { cls: "crit", icon: "▲", state: "Too small", name, text: `${bits.join(" and ")}. Add vehicles or rent for the day.` };
+      return { cls: "crit", icon: "▲", state: "Too small", text: `${bits.join(" and ")}. More ${N.many} are needed, or rent some for the day.` };
     }
-    if (bt.idle > backup) return { cls: "warn", icon: "●", state: "Too big", name, text: `${bt.idle} of ${bt.available} idle all day, more than the ${backup} backup the recipe keeps.` };
-    const why = bt.idle === backup ? `all deliveries on time, with ${backup} backup spare` : bt.idle === 0 ? `all deliveries on time, backup in use` : `all deliveries on time`;
-    return { cls: "good", icon: "✓", state: "About right", name, text: why[0].toUpperCase() + why.slice(1) + "." };
+    if (bt.idle > backup)
+      return { cls: "warn", icon: "●", state: "Too big", text: `All ${bt.jobs} ${N.goods} deliveries made, but ${bt.idle} of ${bt.available} ${N.many} sit idle all day: more than the ${backup} backup the recipe keeps.` };
+    const spare = bt.idle === 0 ? `every ${N.one} in use, so no backup left today` : `${plural(bt.idle, "spare " + N.one, "spare " + N.many)} (the backup)`;
+    return { cls: "good", icon: "✓", state: "About right", text: `All ${bt.jobs} ${N.goods} deliveries made on time, with ${spare}.` };
   }
 
-  function renderVerdicts(res) {
-    $("verdicts").innerHTML = ["A", "B"].map(c => {
+  function renderAnswer(res) {
+    $("answer").innerHTML = ["B", "A"].map(c => {
       const v = verdictFor(c, res.byType[c]);
-      return `<div class="verdict ${v.cls}"><div class="v-head"><span class="v-state" aria-hidden="true">${v.icon}</span><span>${v.name}:</span><span class="v-state">${v.state}</span></div><p>${v.text}</p></div>`;
+      return `<div class="verdict ${v.cls}"><p class="v-head"><span class="v-icon" aria-hidden="true">${v.icon}</span>${NAMES[c].title}: <span class="v-state">${v.state}</span></p><p class="v-text">${v.text}</p></div>`;
     }).join("");
   }
 
-  const pair = (a, b) => `<span class="k-pair"><small>A</small>${a}</span><span class="k-pair"><small>B</small>${b}</span>`;
   function renderKpis(res) {
     const t = res.totals, A = res.byType.A, B = res.byType.B;
+    const idleBits = [];
+    if (A.idle) idleBits.push(plural(A.idle, "van", "vans")); if (B.idle) idleBits.push(plural(B.idle, "truck", "trucks"));
     const k = [
-      ["Vehicles used", `${t.used} of ${t.available}`, `A ${A.used}/${A.available} · B ${B.used}/${B.available}`],
-      ["Utilisation", pair(pct(A.hours_pct), pct(B.hours_pct)), `share of the 10-hour shift used · load A ${pct(A.load_pct)}, B ${pct(B.load_pct)}`],
-      ["Total distance", `${Math.round(t.km)} km`, `A ${Math.round(A.km)} · B ${Math.round(B.km)}`],
-      ["On-time rate", pct(t.on_time), `${t.delivered} of ${t.jobs} deliveries made, ${t.late} late`],
-      ["Cost of the day", peso(t.cost), "fixed cost of vehicles used + per-km cost"],
+      ["Vehicles out today", `${t.used} of ${t.available}`, idleBits.length ? `${idleBits.join(" and ")} stayed at the depot` : "every vehicle went out"],
+      ["Time on the road", `<span class="k-pair"><small>Trucks</small>${pct(B.hours_pct)}</span><span class="k-pair"><small>Vans</small>${pct(A.hours_pct)}</span>`, "average share of the 10-hour day each vehicle is out"],
+      ["Distance", `${Math.round(t.km)} km`, "all routes, estimated road distance"],
+      ["Delivered on time", pct(t.on_time), `${t.delivered} of ${t.jobs} deliveries made${t.late ? `, ${t.late} late` : ""}`],
+      ["Cost today", peso(t.cost), "day rate of vehicles used + cost per km"],
     ];
     $("kpis").innerHTML = k.map(([l, v, s]) => `<div class="kpi"><div class="k-label">${l}</div><div class="k-val">${v}</div><div class="k-sub">${s}</div></div>`).join("");
   }
 
   function renderMap(res) {
     layer.clearLayers();
-    L.marker([D.depot.lat, D.depot.lon], { icon: depotIcon }).bindTooltip(D.depot.name).addTo(layer);
-    res.vehicles.forEach((v, i) => {
+    L.marker([D.depot.lat, D.depot.lon], { icon: depotIcon }).bindTooltip("Depot").addTo(layer);
+    res.vehicles.forEach(v => {
       if (!v.used) return;
-      const color = colorFor(v, i);
+      const color = colorFor(v);
       const dim = state.active && state.active !== v.id;
       const pts = [[D.depot.lat, D.depot.lon]].concat(v.stops.map(s => [s.job.order.lat, s.job.order.lon]), [[D.depot.lat, D.depot.lon]]);
       L.polyline(pts, { color, weight: state.active === v.id ? 4 : 2, opacity: dim ? 0.15 : 0.9, dashArray: v.type === "A" ? "6 5" : null }).addTo(layer);
       v.stops.forEach((s, n) => {
         const o = s.job.order;
         L.circleMarker([o.lat, o.lon], { radius: v.type === "A" ? 5 : 6, color: css("--surface") || "#fff", weight: 2, fillColor: color, fillOpacity: dim ? 0.2 : 1 })
-          .bindTooltip(`<b>${v.id} · stop ${n + 1}</b><br>${o.name} (${o.type})<br>${s.job.kind === "frozen" ? "Ice cream" : "Dry goods"}: ${Math.round(s.job.kg)} kg<br>Window ${o.window_label} (${hhmm(o.window_start)}–${hhmm(o.window_end)})<br>Arrives ${hhmm(s.start)}${s.late ? ` · <b>${Math.round(s.late)} min late</b>` : ""}`)
+          .bindTooltip(`<b>${vname(v)} · stop ${n + 1}</b><br>${o.name} (${o.type})<br>${s.job.kind === "frozen" ? "Ice cream" : "Dry goods"}: ${Math.round(s.job.kg)} kg<br>Wants delivery ${hhmm(o.window_start)}–${hhmm(o.window_end)}<br>Arrives ${hhmm(s.start)}${s.late ? ` · <b>${Math.round(s.late)} min late</b>` : ""}`)
           .addTo(layer);
       });
     });
     res.unserved.forEach(j => {
       const o = j.order;
-      L.circleMarker([o.lat, o.lon], { radius: 6, color: css("--crit"), weight: 2, fillColor: css("--surface"), fillOpacity: 1 })
-        .bindTooltip(`<b>Not delivered</b><br>${o.name}<br>${j.kind === "frozen" ? "Ice cream" : "Dry goods"}: ${Math.round(j.kg)} kg`).addTo(layer);
+      L.circleMarker([o.lat, o.lon], { radius: 7, color: css("--crit"), weight: 3, fillColor: css("--surface"), fillOpacity: 1 })
+        .bindTooltip(`<b>Missed delivery</b><br>${o.name}<br>${j.kind === "frozen" ? "Ice cream" : "Dry goods"}: ${Math.round(j.kg)} kg`).addTo(layer);
     });
   }
 
   function renderRoutes(res) {
-    $("route-list").innerHTML = res.vehicles.map((v, i) => {
-      const color = colorFor(v, i);
-      if (!v.used) return `<div class="route idle"><span class="swatch" style="background:var(--border)"></span><span class="r-name">${v.id}</span><span class="r-tag">idle</span><span class="r-meta">${v.name}, not needed today</span></div>`;
-      return `<div class="route ${state.active === v.id ? "active" : ""}" data-id="${v.id}" tabindex="0">
+    const used = res.vehicles.filter(v => v.used);
+    const rows = used.map(v => {
+      const color = colorFor(v);
+      return `<div class="route ${state.active === v.id ? "active" : ""}" data-id="${v.id}" tabindex="0" role="button" aria-pressed="${state.active === v.id}">
         <span class="swatch ${v.type === "A" ? "dashed" : ""}" style="background:${color};color:${color}"></span>
-        <span class="r-name">${v.id} · ${v.stops.length} stops</span>
-        <span class="r-tag">${peso(v.cost)}${v.late ? ` · <span class="late-tag">${v.late} late</span>` : ""}</span>
-        <span class="r-meta">Load ${pct(v.load_pct)} · out ${pct(v.hours_pct)} of shift (back ${hhmm(v.end_min)}) · ${Math.round(v.km)} km</span></div>`;
-    }).join("");
+        <span class="r-name">${vname(v)}</span>
+        <span class="r-tag">${plural(v.stops.length, "stop", "stops")}${v.late ? ` · <span class="late-tag">${v.late} late</span>` : ""}</span>
+        <span class="bar" aria-label="${pct(v.load_pct)} full"><span style="width:${Math.min(100, Math.round(v.load_pct * 100))}%"></span></span>
+        <span class="r-pct">${pct(v.load_pct)} full</span>
+        <span class="r-meta">Back at ${hhmm(v.end_min)} · ${Math.round(v.km)} km · ${peso(v.cost)}</span></div>`;
+    });
+    const idle = ["A", "B"].map(c => res.byType[c].idle ? plural(res.byType[c].idle, NAMES[c].one, NAMES[c].many) : null).filter(Boolean);
+    if (idle.length) rows.push(`<div class="route idle"><span class="swatch" style="background:var(--border)"></span><span class="r-name">${idle.join(" and ")} stayed at the depot</span><span class="r-meta">Not needed today</span></div>`);
+    $("route-list").innerHTML = rows.join("");
     document.querySelectorAll(".route[data-id]").forEach(el => {
       const toggle = () => { state.active = state.active === el.dataset.id ? null : el.dataset.id; renderMap(state.res); renderRoutes(state.res); };
       el.addEventListener("click", toggle);
       el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
     });
     $("unserved").innerHTML = res.unserved.length
-      ? `<div class="unserved-box"><h3>${res.unserved.length} deliveries not made</h3><div class="small">${res.unserved.slice(0, 12).map(j => `${j.order.name} (${j.kind === "frozen" ? "ice cream" : "dry"}, ${Math.round(j.kg)} kg)`).join(", ")}${res.unserved.length > 12 ? "…" : ""}</div></div>` : "";
+      ? `<div class="unserved-box"><h3>${plural(res.unserved.length, "delivery", "deliveries")} missed</h3><div class="small">${res.unserved.slice(0, 8).map(j => `${j.order.name} (${j.kind === "frozen" ? "ice cream" : "dry goods"})`).join(", ")}${res.unserved.length > 8 ? `, and ${res.unserved.length - 8} more` : ""}</div></div>` : "";
   }
 
-  document.querySelectorAll("#scenario button").forEach(b => b.addEventListener("click", () => {
-    state.scenario = b.dataset.s; state.fleet = recipeFleet(state.scenario); state.active = null;
-    document.querySelectorAll("#scenario button").forEach(x => x.setAttribute("aria-checked", String(x === b)));
-    run();
-  }));
+  // ---------- custom fleet
+  function custom() { state.step = -1; state.active = null; run(); }
+  document.querySelectorAll("#scenario button").forEach(b => b.addEventListener("click", () => { state.scenario = b.dataset.s; custom(); }));
   document.querySelectorAll(".stepper button").forEach(b => b.addEventListener("click", () => {
-    const v = b.dataset.v; state.fleet[v] = Math.max(0, Math.min(25, state.fleet[v] + Number(b.dataset.d))); state.active = null; run();
+    const v = b.dataset.v; state.fleet[v] = Math.max(0, Math.min(25, state.fleet[v] + Number(b.dataset.d))); custom();
   }));
-  $("reset").addEventListener("click", () => { state.fleet = recipeFleet(state.scenario); state.active = null; run(); });
 
-  state.fleet = recipeFleet(state.scenario);
   run();
 })();
