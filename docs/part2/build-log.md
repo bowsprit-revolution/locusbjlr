@@ -60,10 +60,12 @@ The last row is the demo's main point: the normal-season fleet can't cope with a
 
 ## Open items
 
-- Confirm the way step 6 (growth) is applied: each past year is scaled up to 2027 by the measured growth rate before counting days.
+- Rounding in step 6: round up (current code) or to the nearest whole vehicle. BJ to decide.
+- With the new step 6 the fleet has more spare vehicles on the sample days, so the app reads "too big" there. Either the sample days or the "too big" test need adjusting once rounding is settled.
 
 ## Nov 26, 2026
 
 - Simplified the page for a 30-minute presentation: removed the recipe table and chart (they move to a slide) and merged the two utilisation tiles into one.
 - Decided with BJ: no AI inside the app; host it on GitHub Pages.
 - Tried a claude.ai artifact as the app link. Artifacts block images from other sites, so the street map would not show there. GitHub Pages was chosen instead.
+- Step 6 (growth) changed to BJ's version: size the fleet on last year's days only, then add the growth measured over the 5 years (8.1%), then the backup. Previously every past year was scaled up before counting. New fleets (rounding up): Jan–Feb A 3, B 7; Mar–May A 4, B 7; Jun–Aug A 3, B 7; Sep–Dec A 4, B 10.

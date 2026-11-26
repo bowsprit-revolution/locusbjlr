@@ -145,7 +145,11 @@ def avg_travel_min_per_stop(speed_kmh):
 
 
 def run_recipe(history):
-    """Steps 1-6 of BJ's Part 1 recipe, per vehicle type and season."""
+    """Steps 1-6 of BJ's Part 1 recipe, per vehicle type and season.
+
+    Step 6 follows BJ's example ("10 trucks last year + 10% growth -> 11 next year"):
+    size the fleet on last year's days only, then add the growth measured over the 5 years.
+    """
     years = sorted({int(r["date"][:4]) for r in history})
     # measure growth from the data (average year-on-year change in stores ordering)
     yearly = {y: sum(r["dry_stores"] + r["frozen_stores"] for r in history if r["date"].startswith(str(y))) for y in years}
@@ -162,13 +166,12 @@ def run_recipe(history):
         for vt, key in (("B", "dry"), ("A", "frozen")):
             cap = VEHICLES[vt]["capacity_kg"]
             needed = []
-            for r in history:                                            # step 1: filter
+            for r in history:                                            # step 1: filter (last year, this season)
                 y, m = int(r["date"][:4]), int(r["date"][5:7])
-                if m not in months:
+                if m not in months or y != years[-1]:
                     continue
-                scale = (1 + growth) ** (PLAN_YEAR - y)                  # step 6: bring each year to plan-year level
-                stores = r[f"{key}_stores"] * scale                      # step 2: stores and kg per day
-                kg = r[f"{key}_kg"] * scale
+                stores = r[f"{key}_stores"]                              # step 2: stores and kg per day
+                kg = r[f"{key}_kg"]
                 if stores == 0:
                     needed.append({"date": r["date"], "n": 0, "by_weight": 0, "by_stops": 0, "one_off": r["one_off_spike"]})
                     continue
@@ -180,15 +183,16 @@ def run_recipe(history):
                                "one_off": r["one_off_spike"]})
             ns = sorted(x["n"] for x in needed)
             k = math.ceil(COVERAGE * len(ns)) - 1                         # step 4: enough on >= 90% of days
-            fleet_core = ns[k]
-            covered = sum(1 for x in ns if x <= fleet_core) / len(ns)
+            last_year_core = ns[k]
+            fleet_core = math.ceil(last_year_core * (1 + growth))          # step 6: add growth for next year
+            covered = sum(1 for x in ns if x <= last_year_core) / len(ns)
             dist = {}
             for x in ns:
                 dist[x] = dist.get(x, 0) + 1
             out["periods"][period][vt] = {
-                "days": len(ns), "core_fleet": fleet_core, "backup": BACKUP, "fleet": fleet_core + BACKUP,
+                "days": len(ns), "last_year_core": last_year_core, "core_fleet": fleet_core, "backup": BACKUP, "fleet": fleet_core + BACKUP,
                 "covered_share": round(covered, 3), "max_day": ns[-1], "median_day": ns[len(ns) // 2],
-                "days_needing_rental": sum(1 for x in ns if x > fleet_core),
+                "days_needing_rental": sum(1 for x in ns if x > last_year_core),
                 "weight_bound_days": sum(1 for x in needed if x["by_weight"] > x["by_stops"]),
                 "distribution": [{"trucks": t, "days": c} for t, c in sorted(dist.items())],
             }
