@@ -1,8 +1,8 @@
 # Locus pre-sales assignment
 
-Working repository for the Locus Presales Manager (Philippines/Thailand) assignment: allocating Type A (refrigerated) and Type B (dry) vehicles across six Metro Manila distributors of an FMCG company.
+Ben Joseph Ricafrente's submission for the Locus Presales Manager (Philippines/Thailand) assignment: sizing the Type A (refrigerated) and Type B (dry) fleet for six Metro Manila distributors of an FMCG company.
 
-Deadline: Friday, November 27, 2026.
+This repository holds Part 2, the dispatch planner prototype. The Part 1 approach is in the PDF sent with this link.
 
 ## Contents
 
@@ -29,12 +29,4 @@ To regenerate the data (same seed, same result): `python3 data/generate.py`.
 
 ## How AI was used
 
-Per the brief, AI is not used for the Part 1 thinking, approach or models. For Part 1, Claude only asked questions, checked arithmetic and summarised Ben Joseph Ricafrente's own answers; every decision is Ben Joseph Ricafrente's. AI will be used to build the Part 2 prototype and to generate synthetic data.
-
-## Status
-
-- [x] Part 1 thinking sessions (Nov 25)
-- [x] Data assumptions (Nov 25)
-- [x] Synthetic data and prototype v1 (Nov 25)
-- [ ] Approach PDF
-- [ ] Deck and submission
+Per the brief, AI is not used for the Part 1 thinking, approach or models. For Part 1, Claude only asked questions, checked arithmetic and summarised Ben Joseph Ricafrente's own answers; every decision is Ben Joseph Ricafrente's. AI was used to build the Part 2 prototype and to propose the synthetic data assumptions, which Ben Joseph Ricafrente approved.

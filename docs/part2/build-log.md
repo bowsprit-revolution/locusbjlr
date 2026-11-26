@@ -48,7 +48,9 @@ A running record of how the prototype was built, for the "How you built it" part
 | Messy routes | The first version drew crossing routes and ran 204 km on the normal day | Added a local search pass (move stops, reverse segments) and multiple starting orders: 146 km for the same deliveries |
 | Map cut off and cramped numbers | Routes ran past the map edge; two-value KPI tiles wrapped | Fit the map to all stops; split the A and B values in the tiles |
 
-## Results at the time of writing
+## First results (Nov 25, replaced on Nov 26)
+
+These were the first version's numbers. The recipe and sample days changed on Nov 26 (see below), so the current results are in the Nov 26 entry.
 
 | Day | Fleet | Type A verdict | Type B verdict | Delivered | Distance | Cost |
 |---|---|---|---|---|---|---|
@@ -56,9 +58,9 @@ A running record of how the prototype was built, for the "How you built it" part
 | Peak (Dec) | Recipe: A 3, B 9 | About right | About right | 181 of 181 | 244 km | ₱35,553 |
 | Peak (Dec) | Normal-season fleet: A 3, B 6 | About right | Too small | 142 of 181 (39 dry deliveries missed) | 188 km | ₱28,146 |
 
-The last row is the demo's main point: the normal-season fleet can't cope with a December day, and the peak fleet from Ben Joseph Ricafrente's recipe can.
+The last row was already the demo's main point: the normal-season fleet can't cope with a December day, and the peak fleet from Ben Joseph Ricafrente's recipe can.
 
-## Open items
+## The Type A finding
 
 - Type A on the peak day reads "too big": rounding growth up on a small fleet (2 vans x 1.08 = 2.16, so 3, plus 1 backup = 4) gives 2 spare vans on a day that needs 2. Ben Joseph Ricafrente decided (Nov 26) to keep it and present it as a finding: the prototype catching what the recipe alone cannot.
 

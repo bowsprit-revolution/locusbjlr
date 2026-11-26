@@ -1,7 +1,7 @@
 # Data assumptions (approved)
 
 Status: **APPROVED by Ben Joseph Ricafrente on Nov 25, 2026** (proposed by Claude the same afternoon). Choices: Quezon City; one zone of ~600 stores; normal and peak toggle; synthetic 5-year history with Ben Joseph Ricafrente's recipe run in code; B, C and D as proposed. Ben Joseph Ricafrente may revise any value after reviewing the prototype.
-Locus's brief allows AI to generate data assumptions. All values are synthetic and illustrative, not real market data. Items marked **[pick]** need Ben Joseph Ricafrente's choice; everything else is a default he can change.
+Locus's brief allows AI to generate data assumptions. All values are synthetic and illustrative, not real market data. Items marked **[pick]** were Ben Joseph Ricafrente's choices; everything else was accepted as proposed.
 
 These assumptions feed the Part 2 prototype. They are built to fit Ben Joseph Ricafrente's Part 1 recipe (stops-per-day and weight sums, 90% coverage, backups, growth), but they don't change it.
 
