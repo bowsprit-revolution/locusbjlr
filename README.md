@@ -8,10 +8,10 @@ Deadline: Friday, November 27, 2026.
 
 | Path | What it is |
 |---|---|
-| `docs/part2/data-assumptions.md` | Synthetic data assumptions for the prototype (approved by BJ) |
+| `docs/part2/data-assumptions.md` | Synthetic data assumptions for the prototype (approved by Ben Joseph Ricafrente) |
 | `docs/part2/build-log.md` | How the prototype was built: tools, prompts, sticking points, results |
 | `index.html`, `app/` | The dispatch planner prototype (static web page, no build step) |
-| `data/generate.py` | Generates the synthetic stores, 5-year history, sample days and runs BJ's sizing recipe |
+| `data/generate.py` | Generates the synthetic stores, 5-year history, sample days and runs Ben Joseph Ricafrente's sizing recipe |
 | `data/*.csv`, `data/fleet_recipe.json` | Generated data and recipe output |
 
 ## Running the prototype
@@ -29,7 +29,7 @@ To regenerate the data (same seed, same result): `python3 data/generate.py`.
 
 ## How AI was used
 
-Per the brief, AI is not used for the Part 1 thinking, approach or models. For Part 1, Claude only asked questions, checked arithmetic and summarised BJ's own answers; every decision is BJ's. AI will be used to build the Part 2 prototype and to generate synthetic data.
+Per the brief, AI is not used for the Part 1 thinking, approach or models. For Part 1, Claude only asked questions, checked arithmetic and summarised Ben Joseph Ricafrente's own answers; every decision is Ben Joseph Ricafrente's. AI will be used to build the Part 2 prototype and to generate synthetic data.
 
 ## Status
 

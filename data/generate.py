@@ -40,7 +40,7 @@ ROAD_FACTOR = 1.4
 WINDOWS = [("Any time", 8 * 60, 17 * 60, 0.50), ("Morning", 8 * 60, 12 * 60, 0.30), ("Afternoon", 13 * 60, 17 * 60, 0.20)]
 GROCER_WINDOWS = [("Morning receiving", 7 * 60, 11 * 60), ("Afternoon receiving", 13 * 60, 16 * 60)]
 
-# BJ's calendar (Part 1): Sep–Dec dry peak; Mar–May frozen peak; Jun–Aug off-season; Jan–Feb normal
+# Ben Joseph Ricafrente's calendar (Part 1): Sep–Dec dry peak; Mar–May frozen peak; Jun–Aug off-season; Jan–Feb normal
 PERIODS = {"Jan–Feb": [1, 2], "Mar–May": [3, 4, 5], "Jun–Aug": [6, 7, 8], "Sep–Dec": [9, 10, 11, 12]}
 DRY_SEASON = {1: 1.00, 2: 1.00, 3: 1.00, 4: 1.00, 5: 1.00, 6: 0.90, 7: 0.90, 8: 0.90, 9: 1.15, 10: 1.20, 11: 1.25, 12: 1.33}
 FROZEN_SEASON = {1: 1.00, 2: 1.05, 3: 1.40, 4: 1.60, 5: 1.50, 6: 0.90, 7: 0.90, 8: 0.90, 9: 0.90, 10: 0.85, 11: 0.85, 12: 0.85}
@@ -50,9 +50,9 @@ GROWTH = 0.08
 HISTORY_START, HISTORY_END = date(2022, 1, 1), date(2026, 12, 31)   # 5 full years
 ONE_OFF_DAYS = 6                                                   # random one-off spikes
 
-# recipe settings (BJ's Part 1 recipe)
+# recipe settings (Ben Joseph Ricafrente's Part 1 recipe)
 COVERAGE = 0.90      # step 4: enough on at least 90% of the season's days
-BACKUP = 1           # step 5: +1 backup per type (BJ said +1 or 2)
+BACKUP = 1           # step 5: +1 backup per type (Ben Joseph Ricafrente said +1 or 2)
 PLAN_YEAR = 2027     # step 6: plan for next year
 
 
@@ -141,16 +141,16 @@ def make_history(stores):
     return rows
 
 
-# ---------------------------------------------------------------- BJ's recipe
+# ---------------------------------------------------------------- Ben Joseph Ricafrente's recipe
 def avg_travel_min_per_stop(speed_kmh):
     # average distance between neighbouring stops in the zone, plus depot legs spread over a route
     return (1.1 * ROAD_FACTOR) / speed_kmh * 60
 
 
 def run_recipe(history):
-    """Steps 1-6 of BJ's Part 1 recipe, per vehicle type and season.
+    """Steps 1-6 of Ben Joseph Ricafrente's Part 1 recipe, per vehicle type and season.
 
-    Step 6 follows BJ's example ("10 trucks last year + 10% growth -> 11 next year"):
+    Step 6 follows Ben Joseph Ricafrente's example ("10 trucks last year + 10% growth -> 11 next year"):
     size the fleet on last year's days only, then add the growth measured over the 5 years.
     """
     years = sorted({int(r["date"][:4]) for r in history})

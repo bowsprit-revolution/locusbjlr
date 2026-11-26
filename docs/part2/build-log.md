@@ -7,7 +7,7 @@ A running record of how the prototype was built, for the "How you built it" part
 | Tool | Used for |
 |---|---|
 | Claude (Claude Code, in a Claude project thread) | Proposing data assumptions, writing the data generator, the routing solver and the web page |
-| Python 3 (standard library only) | `data/generate.py`: synthetic stores, 5-year order history, the two sample days, and BJ's sizing recipe |
+| Python 3 (standard library only) | `data/generate.py`: synthetic stores, 5-year order history, the two sample days, and Ben Joseph Ricafrente's sizing recipe |
 | Plain HTML, CSS and JavaScript | The app itself. No framework and no build step, so it runs from GitHub Pages as static files |
 | Leaflet 1.9.4 with OpenStreetMap tiles | The map |
 | Playwright (headless Chromium) | Screenshots to check the page after each change |
@@ -15,11 +15,11 @@ A running record of how the prototype was built, for the "How you built it" part
 
 ## How the work was split (Locus's AI rule)
 
-- **Part 1 (BJ only):** the approach, the variables and the sizing recipe are BJ's. Claude only asked questions and kept a log of BJ's answers.
-- **Data assumptions (AI allowed):** Claude proposed values with options; BJ picked (`docs/part2/data-assumptions.md`).
-- **Prototype (AI allowed):** Claude built it after BJ's go-ahead. The recipe is coded exactly as BJ defined it; the code doesn't change it.
+- **Part 1 (Ben Joseph Ricafrente only):** the approach, the variables and the sizing recipe are Ben Joseph Ricafrente's. Claude only asked questions and kept a log of Ben Joseph Ricafrente's answers.
+- **Data assumptions (AI allowed):** Claude proposed values with options; Ben Joseph Ricafrente picked (`docs/part2/data-assumptions.md`).
+- **Prototype (AI allowed):** Claude built it after Ben Joseph Ricafrente's go-ahead. The recipe is coded exactly as Ben Joseph Ricafrente defined it; the code doesn't change it.
 
-## Key prompts (BJ's words)
+## Key prompts (Ben Joseph Ricafrente's words)
 
 1. Setting the working style: *"I want it to be interactive, more of you asking me questions with sensible choices rather than giving the answers straight away."*
 2. Asking for assumptions: *"ok can you work on the data assumptions you will propose so I approve?"*
@@ -29,9 +29,9 @@ A running record of how the prototype was built, for the "How you built it" part
 
 1. **Synthetic data** (`data/generate.py`, fixed seed so results repeat):
    - 600 stores in one Quezon City zone (85% sari-sari and minimarts, 15% grocers), each with a delivery window.
-   - 5 years of daily orders (2022–2026) with BJ's calendar (dry peak Sep–Dec, ice cream peak Mar–May, off-season Jun–Aug), 8% yearly growth, busier weekends and a few one-off spikes.
+   - 5 years of daily orders (2022–2026) with Ben Joseph Ricafrente's calendar (dry peak Sep–Dec, ice cream peak Mar–May, off-season Jun–Aug), 8% yearly growth, busier weekends and a few one-off spikes.
    - Two sample days for 2027: a normal Tuesday in February (98 orders) and a peak Tuesday in December (155 orders).
-2. **BJ's recipe in code** (`run_recipe` in the generator): per season and vehicle type, it counts stores and kg per day, takes the bigger of kg ÷ capacity and stores ÷ stops per vehicle, keeps enough vehicles for 90% of days, adds 1 backup, and brings past years up to 2027 with the measured growth. Output: `data/fleet_recipe.json`.
+2. **Ben Joseph Ricafrente's recipe in code** (`run_recipe` in the generator): per season and vehicle type, it counts stores and kg per day, takes the bigger of kg ÷ capacity and stores ÷ stops per vehicle, keeps enough vehicles for 90% of days, adds 1 backup, and brings past years up to 2027 with the measured growth. Output: `data/fleet_recipe.json`.
 3. **Dispatch planner** (`index.html`, `app/`):
    - Splits each order into a dry job (Type B only) and an ice cream job (Type A only).
    - Builds routes by cheapest insertion that respects capacity, time windows and the 10-hour shift, then improves them by moving stops between routes and reversing route segments (2-opt). It tries three starting orders and keeps the cheapest plan.
@@ -56,25 +56,25 @@ A running record of how the prototype was built, for the "How you built it" part
 | Peak (Dec) | Recipe: A 3, B 9 | About right | About right | 181 of 181 | 244 km | ₱35,553 |
 | Peak (Dec) | Normal-season fleet: A 3, B 6 | About right | Too small | 142 of 181 (39 dry deliveries missed) | 188 km | ₱28,146 |
 
-The last row is the demo's main point: the normal-season fleet can't cope with a December day, and the peak fleet from BJ's recipe can.
+The last row is the demo's main point: the normal-season fleet can't cope with a December day, and the peak fleet from Ben Joseph Ricafrente's recipe can.
 
 ## Open items
 
-- Type A on the peak day reads "too big": rounding growth up on a small fleet (2 vans x 1.08 = 2.16, so 3, plus 1 backup = 4) gives 2 spare vans on a day that needs 2. BJ decided (Nov 26) to keep it and present it as a finding: the prototype catching what the recipe alone cannot.
+- Type A on the peak day reads "too big": rounding growth up on a small fleet (2 vans x 1.08 = 2.16, so 3, plus 1 backup = 4) gives 2 spare vans on a day that needs 2. Ben Joseph Ricafrente decided (Nov 26) to keep it and present it as a finding: the prototype catching what the recipe alone cannot.
 
 ## Nov 26, 2026
 
 - Simplified the page for a 30-minute presentation: removed the recipe table and chart (they move to a slide) and merged the two utilisation tiles into one.
-- Decided with BJ: no AI inside the app; host it on GitHub Pages.
+- Decided with Ben Joseph Ricafrente: no AI inside the app; host it on GitHub Pages.
 - Tried a claude.ai artifact as the app link. Artifacts block images from other sites, so the street map would not show there. GitHub Pages was chosen instead.
-- Step 6 (growth) changed to BJ's version: size the fleet on last year's days only, then add the growth measured over the 5 years (8.1%), then the backup. Previously every past year was scaled up before counting. New fleets (rounding up): Jan–Feb A 3, B 7; Mar–May A 4, B 7; Jun–Aug A 3, B 7; Sep–Dec A 4, B 10.
-- BJ confirmed step 6 rounds up.
+- Step 6 (growth) changed to Ben Joseph Ricafrente's version: size the fleet on last year's days only, then add the growth measured over the 5 years (8.1%), then the backup. Previously every past year was scaled up before counting. New fleets (rounding up): Jan–Feb A 3, B 7; Mar–May A 4, B 7; Jun–Aug A 3, B 7; Sep–Dec A 4, B 10.
+- Ben Joseph Ricafrente confirmed step 6 rounds up.
 - Sample days changed to busy days (order rates 10% above a typical day for that date), since the recipe sizes the fleet for the busy end of the season (the 90% day), not the average day. Normal day: 111 orders; peak day: 163 orders.
-- Fixed the synthetic history so ice cream follows its own calendar (Mar–May peak) instead of rising with the dry-goods peak in Sep–Dec, as BJ's calendar says.
+- Fixed the synthetic history so ice cream follows its own calendar (Mar–May peak) instead of rising with the dry-goods peak in Sep–Dec, as Ben Joseph Ricafrente's calendar says.
 - Results with the recipe fleets: normal day (A 3, B 7): both about right, 137 of 137 deliveries. Peak day (A 4, B 10): Type B about right, 185 of 185 deliveries; Type A too big (2 of 4 vans idle). Peak day with the normal-season fleet (A 3, B 7): Type B too small, 25 deliveries missed.
 
 ## Nov 27, 2026
 
-- Applied BJ's branding to the app, the deck and the Part 1 PDF. Palette: Bone #C8C6AF, Muted Teal #95A78D, Rosy Taupe #BD897E, Vibrant Coral #F87666, with light sage tints as backgrounds. Fonts: Work Sans for titles and labels, Source Serif 4 for body text (bundled in `app/vendor/fonts` with their OFL licences, so the app needs no font CDN). Icons are flat duotone (teal and coral).
-- BJ picked the look from three mockups (Warm paper, Sage, Blush) and the icon style from two (line + tint, flat duotone).
+- Applied Ben Joseph Ricafrente's branding to the app, the deck and the Part 1 PDF. Palette: Bone #C8C6AF, Muted Teal #95A78D, Rosy Taupe #BD897E, Vibrant Coral #F87666, with light sage tints as backgrounds. Fonts: Work Sans for titles and labels, Source Serif 4 for body text (bundled in `app/vendor/fonts` with their OFL licences, so the app needs no font CDN). Icons are flat duotone (teal and coral).
+- Ben Joseph Ricafrente picked the look from three mockups (Warm paper, Sage, Blush) and the icon style from two (line + tint, flat duotone).
 - Route colours were re-picked to sit with the palette and checked for colour-blind separation and contrast against the map background.
