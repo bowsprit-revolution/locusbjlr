@@ -10,13 +10,13 @@
 html, body { margin: 0; height: 100%; }
 body { background: var(--bg); color: var(--text); font: 15px/1.45 var(--sans); }
 .app { display: grid; grid-template-columns: 440px 1fr; height: 100vh; }
-.side { padding: 28px 28px 20px; overflow: auto; display: flex; flex-direction: column; gap: 16px; }
+.side { padding: 22px 28px 16px; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
 .eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0; }
 h1 { font-size: 30px; font-weight: 400; letter-spacing: -0.4px; margin: -8px 0 0; line-height: 1.15; }
 .sub { font-family: var(--serif); color: var(--text-2); margin: -10px 0 0; }
 
 .steps { display: flex; flex-direction: column; gap: 6px; }
-.step { display: flex; align-items: center; gap: 12px; padding: 9px 12px; border: 0; border-radius: 10px; background: transparent; font: inherit; color: var(--text); text-align: left; cursor: pointer; }
+.step { display: flex; align-items: center; gap: 12px; padding: 7px 12px; border: 0; border-radius: 10px; background: transparent; font: inherit; color: var(--text); text-align: left; cursor: pointer; }
 .step:hover { background: var(--surface-2); }
 .step[aria-checked="true"] { background: var(--surface); box-shadow: inset 0 0 0 2px var(--teal); }
 .step .n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); font-weight: 600; font-size: 14px; }
@@ -24,7 +24,7 @@ h1 { font-size: 30px; font-weight: 400; letter-spacing: -0.4px; margin: -8px 0 0
 .step b { font-weight: 500; }
 .caption { font-family: var(--serif); color: var(--text-2); margin: -6px 0 0; min-height: 44px; }
 
-.vrow { padding: 14px 0; border-top: 1px solid var(--border); }
+.vrow { padding: 11px 0; border-top: 1px solid var(--border); }
 .vrow:last-child { border-bottom: 1px solid var(--border); }
 .vhead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .vname { font-weight: 500; } .vname small { font-weight: 400; color: var(--text-2); font-size: 14px; }
@@ -37,7 +37,7 @@ h1 { font-size: 30px; font-weight: 400; letter-spacing: -0.4px; margin: -8px 0 0
 .vnote { font-family: var(--serif); font-size: 14px; color: var(--text-2); margin: 0; }
 .vnote b { color: var(--crit-text); font-weight: 600; }
 
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; margin: 0; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin: 0; }
 .stats div { display: flex; flex-direction: column; }
 .stats dt { font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2); }
 .stats dd { margin: 0; font-size: 22px; font-variant-numeric: tabular-nums; }
@@ -60,3 +60,4 @@ h1 { font-size: 30px; font-weight: 400; letter-spacing: -0.4px; margin: -8px 0 0
   .legend { left: 16px; bottom: 28px; }
   .side { padding: 20px 16px; }
 }
+.byline { font-size: 12px; letter-spacing: 1px; color: var(--text-2); margin: 4px 0 0; padding-top: 10px; border-top: 1px solid var(--border); }
