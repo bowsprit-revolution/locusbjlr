@@ -72,3 +72,9 @@ The last row is the demo's main point: the normal-season fleet can't cope with a
 - Sample days changed to busy days (order rates 10% above a typical day for that date), since the recipe sizes the fleet for the busy end of the season (the 90% day), not the average day. Normal day: 111 orders; peak day: 163 orders.
 - Fixed the synthetic history so ice cream follows its own calendar (Mar–May peak) instead of rising with the dry-goods peak in Sep–Dec, as BJ's calendar says.
 - Results with the recipe fleets: normal day (A 3, B 7): both about right, 137 of 137 deliveries. Peak day (A 4, B 10): Type B about right, 185 of 185 deliveries; Type A too big (2 of 4 vans idle). Peak day with the normal-season fleet (A 3, B 7): Type B too small, 25 deliveries missed.
+
+## Nov 27, 2026
+
+- Applied BJ's branding to the app, the deck and the Part 1 PDF. Palette: Bone #C8C6AF, Muted Teal #95A78D, Rosy Taupe #BD897E, Vibrant Coral #F87666, with light sage tints as backgrounds. Fonts: Work Sans for titles and labels, Source Serif 4 for body text (bundled in `app/vendor/fonts` with their OFL licences, so the app needs no font CDN). Icons are flat duotone (teal and coral).
+- BJ picked the look from three mockups (Warm paper, Sage, Blush) and the icon style from two (line + tint, flat duotone).
+- Route colours were re-picked to sit with the palette and checked for colour-blind separation and contrast against the map background.

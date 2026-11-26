@@ -14,7 +14,7 @@
   const map = L.map("map", { scrollWheelZoom: false, zoomSnap: 0.25 }).setView([D.depot.lat, D.depot.lon], 14);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: "© OpenStreetMap contributors" }).addTo(map);
   const layer = L.layerGroup().addTo(map);
-  const depotIcon = L.divIcon({ className: "", html: '<div style="width:16px;height:16px;background:#191919;border:3px solid #fff;border-radius:3px;box-shadow:0 0 0 1px #191919"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
+  const depotIcon = L.divIcon({ className: "", html: '<div style="width:16px;height:16px;background:#2C3229;border:3px solid #FBFCF9;border-radius:3px;box-shadow:0 0 0 1px #2C3229"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
 
   function colorFor(v) {
     const n = parseInt(v.id.slice(1), 10) - 1;
