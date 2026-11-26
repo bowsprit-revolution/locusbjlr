@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QC Dispatch Planner</title>
+<link rel="stylesheet" href="app/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="app/style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Quezon City Zone 1 · Dispatch planner</h1>
+    <p class="sub">Tests the fleet from the Part 1 sizing recipe on one day of deliveries. Synthetic data only.</p>
+  </div>
+</header>
+
+<section class="controls" aria-label="Plan controls">
+  <div class="ctl">
+    <span class="ctl-label">Day</span>
+    <div class="seg" role="radiogroup" id="scenario">
+      <button role="radio" data-s="normal" aria-checked="true">Normal day</button>
+      <button role="radio" data-s="peak" aria-checked="false">Peak day</button>
+    </div>
+    <span class="hint" id="scenario-hint"></span>
+  </div>
+  <div class="ctl">
+    <span class="ctl-label">Type A refrigerated vans</span>
+    <div class="stepper"><button data-v="A" data-d="-1" aria-label="Fewer Type A">−</button><output id="fleet-A">0</output><button data-v="A" data-d="1" aria-label="More Type A">+</button></div>
+    <span class="hint" id="hint-A"></span>
+  </div>
+  <div class="ctl">
+    <span class="ctl-label">Type B dry trucks</span>
+    <div class="stepper"><button data-v="B" data-d="-1" aria-label="Fewer Type B">−</button><output id="fleet-B">0</output><button data-v="B" data-d="1" aria-label="More Type B">+</button></div>
+    <span class="hint" id="hint-B"></span>
+  </div>
+  <div class="ctl ctl-end">
+    <button class="btn" id="reset">Reset to recipe fleet</button>
+  </div>
+</section>
+
+<section class="verdicts" id="verdicts" aria-live="polite"></section>
+
+<section class="kpis" id="kpis"></section>
+
+<section class="main">
+  <div class="map-wrap"><div id="map" role="img" aria-label="Map of the day's routes"></div>
+    <p class="map-note">Lines join stops in delivery order (straight lines; road distance estimated as 1.4× straight-line). Dashed = Type A.</p>
+  </div>
+  <aside class="routes">
+    <h2>Routes</h2>
+    <div id="unserved"></div>
+    <div id="route-list"></div>
+  </aside>
+</section>
+
+<footer class="foot">
+  <p><b>Assumptions (synthetic):</b> Type A 1,000 kg, ₱35/km, ₱2,500/day fixed. Type B 4,000 kg, ₱25/km, ₱3,000/day fixed.
+  Shift 7 AM–5 PM. 15 min per sari-sari stop, 30 min per grocer (+5 min on peak). 18 km/h average speed (14 km/h on peak).
+  Ice cream travels only on Type A; dry goods only on Type B. Full list in <code>docs/part2/data-assumptions.md</code>.</p>
+</footer>
+
+<script src="app/vendor/leaflet/leaflet.js"></script>
+<script src="app/data.js"></script>
+<script src="app/solver.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

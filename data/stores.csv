@@ -1,0 +1,601 @@
+store_id,name,type,lat,lon,buys_frozen,window_label,window_start,window_end
+S001,Mini-mart 001,sari-sari,14.66272,121.04868,False,Any time,480,1020
+S002,Store 002,sari-sari,14.66787,121.05738,False,Any time,480,1020
+S003,Store 003,sari-sari,14.67887,121.04736,False,Afternoon,780,1020
+S004,Mini-mart 004,sari-sari,14.67272,121.01645,False,Morning,480,720
+S005,Store 005,sari-sari,14.65014,121.05631,False,Any time,480,1020
+S006,Mini-mart 006,sari-sari,14.66437,121.0368,True,Afternoon,780,1020
+S007,Store 007,sari-sari,14.66851,121.01187,True,Afternoon,780,1020
+S008,Grocer 008,grocer,14.66031,121.01863,True,Afternoon receiving,780,960
+S009,Mini-mart 009,sari-sari,14.698,121.04681,True,Morning,480,720
+S010,Store 010,sari-sari,14.65801,121.01085,True,Any time,480,1020
+S011,Grocer 011,grocer,14.67265,121.04637,True,Afternoon receiving,780,960
+S012,Grocer 012,grocer,14.66586,121.05418,False,Afternoon receiving,780,960
+S013,Mini-mart 013,sari-sari,14.67853,121.01586,True,Morning,480,720
+S014,Mini-mart 014,sari-sari,14.68459,121.02559,True,Any time,480,1020
+S015,Sari-sari 015,sari-sari,14.69321,121.01107,False,Any time,480,1020
+S016,Sari-sari 016,sari-sari,14.66787,121.0053,False,Any time,480,1020
+S017,Sari-sari 017,sari-sari,14.69824,121.01628,False,Afternoon,780,1020
+S018,Mini-mart 018,sari-sari,14.6836,121.02705,False,Any time,480,1020
+S019,Store 019,sari-sari,14.64133,121.0491,False,Any time,480,1020
+S020,Grocer 020,grocer,14.65436,121.00976,False,Afternoon receiving,780,960
+S021,Sari-sari 021,sari-sari,14.69515,121.03998,False,Any time,480,1020
+S022,Grocer 022,grocer,14.64031,121.05787,False,Afternoon receiving,780,960
+S023,Store 023,sari-sari,14.68629,121.02108,False,Any time,480,1020
+S024,Store 024,sari-sari,14.67874,121.02183,False,Morning,480,720
+S025,Mini-mart 025,sari-sari,14.67085,121.01222,False,Afternoon,780,1020
+S026,Grocer 026,grocer,14.65618,121.0345,False,Morning receiving,420,660
+S027,Sari-sari 027,sari-sari,14.68033,121.02804,True,Afternoon,780,1020
+S028,Sari-sari 028,sari-sari,14.66009,121.03437,False,Afternoon,780,1020
+S029,Grocer 029,grocer,14.68247,121.03833,False,Morning receiving,420,660
+S030,Grocer 030,grocer,14.6987,121.03824,True,Afternoon receiving,780,960
+S031,Sari-sari 031,sari-sari,14.67197,121.04603,True,Any time,480,1020
+S032,Sari-sari 032,sari-sari,14.69322,121.02373,False,Any time,480,1020
+S033,Grocer 033,grocer,14.68359,121.01485,True,Morning receiving,420,660
+S034,Mini-mart 034,sari-sari,14.65441,121.00276,True,Any time,480,1020
+S035,Mini-mart 035,sari-sari,14.66367,121.04149,False,Morning,480,720
+S036,Sari-sari 036,sari-sari,14.68612,121.05376,False,Any time,480,1020
+S037,Grocer 037,grocer,14.6444,121.02124,False,Morning receiving,420,660
+S038,Grocer 038,grocer,14.66186,121.01045,True,Morning receiving,420,660
+S039,Mini-mart 039,sari-sari,14.65821,121.01809,True,Morning,480,720
+S040,Sari-sari 040,sari-sari,14.66357,121.0372,False,Any time,480,1020
+S041,Store 041,sari-sari,14.69147,121.03723,True,Any time,480,1020
+S042,Store 042,sari-sari,14.65109,121.01252,False,Any time,480,1020
+S043,Sari-sari 043,sari-sari,14.66949,121.01097,True,Morning,480,720
+S044,Sari-sari 044,sari-sari,14.66211,121.03833,True,Any time,480,1020
+S045,Sari-sari 045,sari-sari,14.66002,121.03231,True,Any time,480,1020
+S046,Grocer 046,grocer,14.68621,121.03733,False,Morning receiving,420,660
+S047,Mini-mart 047,sari-sari,14.69251,121.01801,False,Any time,480,1020
+S048,Store 048,sari-sari,14.66198,121.04166,True,Any time,480,1020
+S049,Store 049,sari-sari,14.68066,121.02247,True,Morning,480,720
+S050,Sari-sari 050,sari-sari,14.6689,121.04665,False,Any time,480,1020
+S051,Mini-mart 051,sari-sari,14.68932,121.01936,False,Any time,480,1020
+S052,Mini-mart 052,sari-sari,14.66562,121.01456,False,Morning,480,720
+S053,Sari-sari 053,sari-sari,14.65944,121.04009,False,Any time,480,1020
+S054,Mini-mart 054,sari-sari,14.68378,121.05103,False,Any time,480,1020
+S055,Sari-sari 055,sari-sari,14.68237,121.04924,False,Afternoon,780,1020
+S056,Sari-sari 056,sari-sari,14.69876,121.03903,False,Any time,480,1020
+S057,Store 057,sari-sari,14.66166,121.0371,True,Any time,480,1020
+S058,Store 058,sari-sari,14.68937,121.01664,False,Any time,480,1020
+S059,Grocer 059,grocer,14.65911,121.00595,False,Afternoon receiving,780,960
+S060,Sari-sari 060,sari-sari,14.65867,121.03779,False,Morning,480,720
+S061,Grocer 061,grocer,14.67974,121.01728,False,Morning receiving,420,660
+S062,Mini-mart 062,sari-sari,14.67815,121.01303,False,Any time,480,1020
+S063,Store 063,sari-sari,14.69384,121.04484,False,Any time,480,1020
+S064,Store 064,sari-sari,14.69353,121.04322,True,Morning,480,720
+S065,Mini-mart 065,sari-sari,14.67473,121.04394,False,Afternoon,780,1020
+S066,Sari-sari 066,sari-sari,14.661,121.02078,False,Any time,480,1020
+S067,Grocer 067,grocer,14.68739,121.04522,False,Morning receiving,420,660
+S068,Store 068,sari-sari,14.66141,121.0353,False,Any time,480,1020
+S069,Mini-mart 069,sari-sari,14.66668,121.00867,False,Any time,480,1020
+S070,Sari-sari 070,sari-sari,14.66765,121.00594,False,Morning,480,720
+S071,Store 071,sari-sari,14.66102,121.00571,False,Afternoon,780,1020
+S072,Store 072,sari-sari,14.65263,121.05879,True,Afternoon,780,1020
+S073,Mini-mart 073,sari-sari,14.67769,121.01383,False,Morning,480,720
+S074,Store 074,sari-sari,14.66457,121.05542,False,Any time,480,1020
+S075,Sari-sari 075,sari-sari,14.68187,121.00795,True,Any time,480,1020
+S076,Mini-mart 076,sari-sari,14.68329,121.03915,True,Afternoon,780,1020
+S077,Store 077,sari-sari,14.66595,121.0181,False,Any time,480,1020
+S078,Mini-mart 078,sari-sari,14.66824,121.0431,False,Morning,480,720
+S079,Store 079,sari-sari,14.68618,121.05953,False,Any time,480,1020
+S080,Store 080,sari-sari,14.67789,121.05115,True,Afternoon,780,1020
+S081,Sari-sari 081,sari-sari,14.65705,121.00819,True,Morning,480,720
+S082,Mini-mart 082,sari-sari,14.66143,121.01212,False,Morning,480,720
+S083,Store 083,sari-sari,14.68425,121.04054,False,Afternoon,780,1020
+S084,Sari-sari 084,sari-sari,14.65127,121.04004,False,Any time,480,1020
+S085,Sari-sari 085,sari-sari,14.66114,121.03469,False,Any time,480,1020
+S086,Store 086,sari-sari,14.66042,121.05983,True,Any time,480,1020
+S087,Store 087,sari-sari,14.68369,121.05338,False,Morning,480,720
+S088,Sari-sari 088,sari-sari,14.65334,121.03246,False,Morning,480,720
+S089,Grocer 089,grocer,14.64965,121.03899,False,Morning receiving,420,660
+S090,Grocer 090,grocer,14.64309,121.03766,False,Afternoon receiving,780,960
+S091,Grocer 091,grocer,14.67475,121.01521,False,Morning receiving,420,660
+S092,Store 092,sari-sari,14.65898,121.03283,False,Any time,480,1020
+S093,Store 093,sari-sari,14.65598,121.00487,True,Afternoon,780,1020
+S094,Grocer 094,grocer,14.66086,121.01195,False,Morning receiving,420,660
+S095,Store 095,sari-sari,14.68269,121.03511,True,Morning,480,720
+S096,Mini-mart 096,sari-sari,14.64844,121.00898,False,Any time,480,1020
+S097,Grocer 097,grocer,14.68511,121.04325,False,Morning receiving,420,660
+S098,Grocer 098,grocer,14.67967,121.04775,False,Afternoon receiving,780,960
+S099,Sari-sari 099,sari-sari,14.66387,121.05126,False,Morning,480,720
+S100,Mini-mart 100,sari-sari,14.65935,121.0062,True,Afternoon,780,1020
+S101,Store 101,sari-sari,14.64102,121.02913,True,Any time,480,1020
+S102,Mini-mart 102,sari-sari,14.65951,121.0,False,Morning,480,720
+S103,Store 103,sari-sari,14.67071,121.02911,False,Any time,480,1020
+S104,Sari-sari 104,sari-sari,14.69119,121.01722,False,Morning,480,720
+S105,Sari-sari 105,sari-sari,14.6618,121.01046,False,Morning,480,720
+S106,Store 106,sari-sari,14.68461,121.05068,False,Morning,480,720
+S107,Mini-mart 107,sari-sari,14.69205,121.05093,False,Any time,480,1020
+S108,Mini-mart 108,sari-sari,14.69252,121.04913,True,Afternoon,780,1020
+S109,Sari-sari 109,sari-sari,14.66617,121.04044,True,Afternoon,780,1020
+S110,Store 110,sari-sari,14.64486,121.012,True,Any time,480,1020
+S111,Mini-mart 111,sari-sari,14.64753,121.02468,False,Any time,480,1020
+S112,Sari-sari 112,sari-sari,14.6648,121.01515,False,Any time,480,1020
+S113,Grocer 113,grocer,14.67208,121.04773,False,Morning receiving,420,660
+S114,Store 114,sari-sari,14.66585,121.01203,False,Any time,480,1020
+S115,Sari-sari 115,sari-sari,14.65785,121.0004,True,Morning,480,720
+S116,Sari-sari 116,sari-sari,14.68448,121.06,True,Any time,480,1020
+S117,Store 117,sari-sari,14.68804,121.04566,False,Any time,480,1020
+S118,Sari-sari 118,sari-sari,14.68012,121.00922,True,Any time,480,1020
+S119,Store 119,sari-sari,14.67043,121.01765,True,Any time,480,1020
+S120,Store 120,sari-sari,14.67957,121.01423,False,Afternoon,780,1020
+S121,Store 121,sari-sari,14.68047,121.01905,False,Any time,480,1020
+S122,Store 122,sari-sari,14.66807,121.01853,True,Afternoon,780,1020
+S123,Store 123,sari-sari,14.68777,121.03966,False,Any time,480,1020
+S124,Sari-sari 124,sari-sari,14.64844,121.00788,False,Any time,480,1020
+S125,Mini-mart 125,sari-sari,14.65875,121.0053,False,Any time,480,1020
+S126,Store 126,sari-sari,14.65102,121.05378,False,Morning,480,720
+S127,Store 127,sari-sari,14.65764,121.00791,False,Afternoon,780,1020
+S128,Mini-mart 128,sari-sari,14.6557,121.0031,False,Any time,480,1020
+S129,Grocer 129,grocer,14.66305,121.05036,False,Morning receiving,420,660
+S130,Store 130,sari-sari,14.6947,121.04841,True,Any time,480,1020
+S131,Mini-mart 131,sari-sari,14.66566,121.03594,True,Any time,480,1020
+S132,Mini-mart 132,sari-sari,14.67029,121.04332,False,Any time,480,1020
+S133,Store 133,sari-sari,14.65952,121.03611,True,Any time,480,1020
+S134,Grocer 134,grocer,14.68084,121.02941,False,Morning receiving,420,660
+S135,Store 135,sari-sari,14.64316,121.00924,True,Morning,480,720
+S136,Sari-sari 136,sari-sari,14.66397,121.00269,False,Any time,480,1020
+S137,Store 137,sari-sari,14.66573,121.01752,True,Any time,480,1020
+S138,Grocer 138,grocer,14.68554,121.03939,False,Morning receiving,420,660
+S139,Sari-sari 139,sari-sari,14.64774,121.0587,True,Any time,480,1020
+S140,Mini-mart 140,sari-sari,14.66013,121.00642,False,Afternoon,780,1020
+S141,Sari-sari 141,sari-sari,14.64077,121.01735,False,Afternoon,780,1020
+S142,Mini-mart 142,sari-sari,14.65216,121.00438,True,Any time,480,1020
+S143,Mini-mart 143,sari-sari,14.67632,121.01288,False,Any time,480,1020
+S144,Mini-mart 144,sari-sari,14.65007,121.00841,False,Morning,480,720
+S145,Sari-sari 145,sari-sari,14.66395,121.03312,False,Any time,480,1020
+S146,Mini-mart 146,sari-sari,14.66028,121.01222,False,Morning,480,720
+S147,Mini-mart 147,sari-sari,14.6686,121.04458,False,Any time,480,1020
+S148,Store 148,sari-sari,14.6411,121.01478,False,Morning,480,720
+S149,Mini-mart 149,sari-sari,14.68944,121.00045,True,Any time,480,1020
+S150,Store 150,sari-sari,14.66042,121.01111,True,Afternoon,780,1020
+S151,Mini-mart 151,sari-sari,14.69008,121.05281,True,Any time,480,1020
+S152,Sari-sari 152,sari-sari,14.66342,121.02063,False,Afternoon,780,1020
+S153,Store 153,sari-sari,14.69284,121.04822,False,Any time,480,1020
+S154,Sari-sari 154,sari-sari,14.65474,121.03021,True,Morning,480,720
+S155,Store 155,sari-sari,14.66274,121.02675,False,Morning,480,720
+S156,Grocer 156,grocer,14.6569,121.01926,False,Afternoon receiving,780,960
+S157,Store 157,sari-sari,14.66355,121.03034,False,Any time,480,1020
+S158,Mini-mart 158,sari-sari,14.64021,121.02261,False,Morning,480,720
+S159,Sari-sari 159,sari-sari,14.68274,121.05035,False,Any time,480,1020
+S160,Store 160,sari-sari,14.68105,121.01316,False,Any time,480,1020
+S161,Store 161,sari-sari,14.64264,121.01087,True,Any time,480,1020
+S162,Sari-sari 162,sari-sari,14.69071,121.05176,False,Any time,480,1020
+S163,Store 163,sari-sari,14.69283,121.0163,False,Morning,480,720
+S164,Sari-sari 164,sari-sari,14.68586,121.03849,True,Any time,480,1020
+S165,Grocer 165,grocer,14.66521,121.05628,False,Morning receiving,420,660
+S166,Store 166,sari-sari,14.66941,121.01246,True,Morning,480,720
+S167,Store 167,sari-sari,14.65563,121.03943,False,Any time,480,1020
+S168,Store 168,sari-sari,14.68522,121.03144,False,Any time,480,1020
+S169,Store 169,sari-sari,14.6852,121.0157,True,Morning,480,720
+S170,Mini-mart 170,sari-sari,14.68788,121.04138,True,Any time,480,1020
+S171,Mini-mart 171,sari-sari,14.64266,121.01362,False,Afternoon,780,1020
+S172,Sari-sari 172,sari-sari,14.66166,121.03526,False,Morning,480,720
+S173,Mini-mart 173,sari-sari,14.67528,121.01705,False,Any time,480,1020
+S174,Grocer 174,grocer,14.6607,121.01649,False,Afternoon receiving,780,960
+S175,Mini-mart 175,sari-sari,14.65978,121.0078,True,Morning,480,720
+S176,Grocer 176,grocer,14.66474,121.03216,True,Morning receiving,420,660
+S177,Sari-sari 177,sari-sari,14.65334,121.00715,False,Morning,480,720
+S178,Mini-mart 178,sari-sari,14.67806,121.04902,False,Any time,480,1020
+S179,Sari-sari 179,sari-sari,14.676,121.03654,True,Morning,480,720
+S180,Store 180,sari-sari,14.66373,121.06,False,Any time,480,1020
+S181,Store 181,sari-sari,14.66556,121.00175,False,Any time,480,1020
+S182,Sari-sari 182,sari-sari,14.66344,121.02908,False,Any time,480,1020
+S183,Mini-mart 183,sari-sari,14.66362,121.00001,True,Any time,480,1020
+S184,Store 184,sari-sari,14.64198,121.02831,True,Afternoon,780,1020
+S185,Store 185,sari-sari,14.65833,121.01241,False,Any time,480,1020
+S186,Sari-sari 186,sari-sari,14.66516,121.05606,True,Any time,480,1020
+S187,Sari-sari 187,sari-sari,14.67648,121.00787,False,Any time,480,1020
+S188,Mini-mart 188,sari-sari,14.64491,121.05465,True,Morning,480,720
+S189,Sari-sari 189,sari-sari,14.66822,121.03907,True,Morning,480,720
+S190,Mini-mart 190,sari-sari,14.66231,121.01308,True,Any time,480,1020
+S191,Mini-mart 191,sari-sari,14.66264,121.00422,False,Afternoon,780,1020
+S192,Mini-mart 192,sari-sari,14.66396,121.0,False,Morning,480,720
+S193,Sari-sari 193,sari-sari,14.66711,121.0449,True,Any time,480,1020
+S194,Mini-mart 194,sari-sari,14.66227,121.01236,False,Afternoon,780,1020
+S195,Store 195,sari-sari,14.66082,121.0168,False,Any time,480,1020
+S196,Store 196,sari-sari,14.65063,121.01315,False,Any time,480,1020
+S197,Grocer 197,grocer,14.68893,121.05115,False,Morning receiving,420,660
+S198,Mini-mart 198,sari-sari,14.65743,121.00451,False,Morning,480,720
+S199,Sari-sari 199,sari-sari,14.69213,121.06,False,Afternoon,780,1020
+S200,Store 200,sari-sari,14.68711,121.06,False,Afternoon,780,1020
+S201,Mini-mart 201,sari-sari,14.64755,121.02777,False,Afternoon,780,1020
+S202,Mini-mart 202,sari-sari,14.6774,121.04414,False,Morning,480,720
+S203,Store 203,sari-sari,14.67427,121.01953,False,Afternoon,780,1020
+S204,Sari-sari 204,sari-sari,14.68464,121.04007,True,Any time,480,1020
+S205,Sari-sari 205,sari-sari,14.68712,121.03287,True,Morning,480,720
+S206,Sari-sari 206,sari-sari,14.65072,121.04275,False,Morning,480,720
+S207,Store 207,sari-sari,14.65644,121.0306,False,Any time,480,1020
+S208,Store 208,sari-sari,14.68435,121.05199,False,Any time,480,1020
+S209,Mini-mart 209,sari-sari,14.65915,121.03993,False,Morning,480,720
+S210,Store 210,sari-sari,14.65131,121.01598,True,Any time,480,1020
+S211,Sari-sari 211,sari-sari,14.69989,121.0512,True,Morning,480,720
+S212,Mini-mart 212,sari-sari,14.66163,121.01236,False,Any time,480,1020
+S213,Sari-sari 213,sari-sari,14.6709,121.04192,False,Any time,480,1020
+S214,Sari-sari 214,sari-sari,14.65832,121.00543,False,Any time,480,1020
+S215,Store 215,sari-sari,14.6865,121.03417,False,Any time,480,1020
+S216,Grocer 216,grocer,14.68482,121.01968,False,Morning receiving,420,660
+S217,Store 217,sari-sari,14.69228,121.04868,True,Any time,480,1020
+S218,Sari-sari 218,sari-sari,14.68201,121.02034,False,Any time,480,1020
+S219,Sari-sari 219,sari-sari,14.66201,121.0098,False,Morning,480,720
+S220,Grocer 220,grocer,14.68241,121.00426,True,Morning receiving,420,660
+S221,Store 221,sari-sari,14.66287,121.03715,False,Any time,480,1020
+S222,Sari-sari 222,sari-sari,14.67336,121.04087,False,Morning,480,720
+S223,Grocer 223,grocer,14.68378,121.01585,True,Morning receiving,420,660
+S224,Store 224,sari-sari,14.67456,121.03497,False,Morning,480,720
+S225,Grocer 225,grocer,14.68431,121.05,True,Morning receiving,420,660
+S226,Store 226,sari-sari,14.65759,121.00732,False,Morning,480,720
+S227,Sari-sari 227,sari-sari,14.67804,121.04787,True,Any time,480,1020
+S228,Mini-mart 228,sari-sari,14.69808,121.04982,False,Any time,480,1020
+S229,Mini-mart 229,sari-sari,14.68102,121.0123,False,Morning,480,720
+S230,Store 230,sari-sari,14.66316,121.05069,True,Morning,480,720
+S231,Store 231,sari-sari,14.69634,121.02399,False,Afternoon,780,1020
+S232,Store 232,sari-sari,14.6813,121.02054,False,Any time,480,1020
+S233,Sari-sari 233,sari-sari,14.67696,121.00939,True,Any time,480,1020
+S234,Grocer 234,grocer,14.65644,121.03375,False,Afternoon receiving,780,960
+S235,Mini-mart 235,sari-sari,14.67122,121.0146,False,Morning,480,720
+S236,Grocer 236,grocer,14.64546,121.04952,False,Afternoon receiving,780,960
+S237,Mini-mart 237,sari-sari,14.68542,121.05662,False,Morning,480,720
+S238,Grocer 238,grocer,14.6649,121.04801,False,Afternoon receiving,780,960
+S239,Store 239,sari-sari,14.65927,121.03459,False,Afternoon,780,1020
+S240,Grocer 240,grocer,14.64449,121.00544,True,Morning receiving,420,660
+S241,Store 241,sari-sari,14.66481,121.05574,False,Morning,480,720
+S242,Mini-mart 242,sari-sari,14.66898,121.00157,False,Morning,480,720
+S243,Store 243,sari-sari,14.64419,121.03381,False,Afternoon,780,1020
+S244,Sari-sari 244,sari-sari,14.66923,121.01155,True,Any time,480,1020
+S245,Grocer 245,grocer,14.67349,121.01413,False,Morning receiving,420,660
+S246,Store 246,sari-sari,14.68462,121.04133,False,Any time,480,1020
+S247,Store 247,sari-sari,14.65672,121.04229,False,Any time,480,1020
+S248,Store 248,sari-sari,14.65384,121.03803,False,Afternoon,780,1020
+S249,Mini-mart 249,sari-sari,14.68549,121.02815,True,Morning,480,720
+S250,Sari-sari 250,sari-sari,14.66626,121.00587,False,Morning,480,720
+S251,Mini-mart 251,sari-sari,14.68507,121.05056,False,Any time,480,1020
+S252,Store 252,sari-sari,14.69182,121.06,True,Any time,480,1020
+S253,Store 253,sari-sari,14.66159,121.05805,False,Morning,480,720
+S254,Store 254,sari-sari,14.6691,121.03938,False,Any time,480,1020
+S255,Grocer 255,grocer,14.65384,121.0058,False,Afternoon receiving,780,960
+S256,Store 256,sari-sari,14.66469,121.00853,True,Morning,480,720
+S257,Mini-mart 257,sari-sari,14.69243,121.04762,False,Morning,480,720
+S258,Grocer 258,grocer,14.66916,121.04476,True,Afternoon receiving,780,960
+S259,Sari-sari 259,sari-sari,14.68357,121.04946,False,Any time,480,1020
+S260,Mini-mart 260,sari-sari,14.66234,121.02073,True,Any time,480,1020
+S261,Mini-mart 261,sari-sari,14.64791,121.05182,False,Morning,480,720
+S262,Store 262,sari-sari,14.69164,121.00676,False,Afternoon,780,1020
+S263,Mini-mart 263,sari-sari,14.69131,121.05052,False,Morning,480,720
+S264,Store 264,sari-sari,14.65941,121.02828,False,Any time,480,1020
+S265,Mini-mart 265,sari-sari,14.66037,121.04417,True,Morning,480,720
+S266,Sari-sari 266,sari-sari,14.66304,121.05165,False,Any time,480,1020
+S267,Store 267,sari-sari,14.6788,121.01578,False,Morning,480,720
+S268,Sari-sari 268,sari-sari,14.65876,121.00026,True,Afternoon,780,1020
+S269,Grocer 269,grocer,14.68651,121.03764,False,Morning receiving,420,660
+S270,Mini-mart 270,sari-sari,14.66554,121.05486,True,Afternoon,780,1020
+S271,Sari-sari 271,sari-sari,14.68677,121.04163,False,Any time,480,1020
+S272,Sari-sari 272,sari-sari,14.66918,121.05153,False,Any time,480,1020
+S273,Mini-mart 273,sari-sari,14.65045,121.00072,False,Any time,480,1020
+S274,Mini-mart 274,sari-sari,14.69472,121.01474,True,Any time,480,1020
+S275,Grocer 275,grocer,14.684,121.02924,True,Afternoon receiving,780,960
+S276,Sari-sari 276,sari-sari,14.69559,121.05822,False,Afternoon,780,1020
+S277,Store 277,sari-sari,14.66879,121.04383,True,Morning,480,720
+S278,Store 278,sari-sari,14.65353,121.03451,True,Any time,480,1020
+S279,Grocer 279,grocer,14.67937,121.01349,False,Morning receiving,420,660
+S280,Mini-mart 280,sari-sari,14.6912,121.02034,False,Afternoon,780,1020
+S281,Store 281,sari-sari,14.66903,121.01381,False,Afternoon,780,1020
+S282,Sari-sari 282,sari-sari,14.67483,121.01308,False,Any time,480,1020
+S283,Grocer 283,grocer,14.67081,121.04423,True,Afternoon receiving,780,960
+S284,Sari-sari 284,sari-sari,14.67713,121.05223,False,Any time,480,1020
+S285,Sari-sari 285,sari-sari,14.64707,121.01616,True,Any time,480,1020
+S286,Store 286,sari-sari,14.65714,121.04998,False,Morning,480,720
+S287,Sari-sari 287,sari-sari,14.69868,121.05233,False,Morning,480,720
+S288,Mini-mart 288,sari-sari,14.68747,121.04351,False,Any time,480,1020
+S289,Sari-sari 289,sari-sari,14.65523,121.00394,False,Morning,480,720
+S290,Grocer 290,grocer,14.65342,121.02665,False,Morning receiving,420,660
+S291,Sari-sari 291,sari-sari,14.65659,121.00161,False,Morning,480,720
+S292,Store 292,sari-sari,14.65993,121.01528,True,Any time,480,1020
+S293,Store 293,sari-sari,14.65488,121.0087,False,Morning,480,720
+S294,Sari-sari 294,sari-sari,14.68242,121.0543,False,Afternoon,780,1020
+S295,Grocer 295,grocer,14.68348,121.00867,False,Afternoon receiving,780,960
+S296,Sari-sari 296,sari-sari,14.6687,121.00806,False,Morning,480,720
+S297,Sari-sari 297,sari-sari,14.65382,121.03448,False,Afternoon,780,1020
+S298,Store 298,sari-sari,14.64935,121.03326,False,Any time,480,1020
+S299,Mini-mart 299,sari-sari,14.69458,121.0106,False,Any time,480,1020
+S300,Sari-sari 300,sari-sari,14.68604,121.04516,False,Any time,480,1020
+S301,Store 301,sari-sari,14.66099,121.03193,True,Afternoon,780,1020
+S302,Store 302,sari-sari,14.6655,121.00546,True,Morning,480,720
+S303,Sari-sari 303,sari-sari,14.66336,121.02118,False,Any time,480,1020
+S304,Mini-mart 304,sari-sari,14.66412,121.04027,False,Any time,480,1020
+S305,Mini-mart 305,sari-sari,14.6839,121.02537,True,Afternoon,780,1020
+S306,Sari-sari 306,sari-sari,14.67976,121.02593,False,Any time,480,1020
+S307,Sari-sari 307,sari-sari,14.6663,121.0445,True,Any time,480,1020
+S308,Mini-mart 308,sari-sari,14.6725,121.04425,False,Any time,480,1020
+S309,Sari-sari 309,sari-sari,14.66364,121.02099,False,Morning,480,720
+S310,Store 310,sari-sari,14.68503,121.04379,False,Morning,480,720
+S311,Sari-sari 311,sari-sari,14.65874,121.01622,True,Any time,480,1020
+S312,Grocer 312,grocer,14.68388,121.01572,False,Morning receiving,420,660
+S313,Mini-mart 313,sari-sari,14.67337,121.01458,True,Morning,480,720
+S314,Store 314,sari-sari,14.6684,121.04212,True,Morning,480,720
+S315,Store 315,sari-sari,14.67741,121.02135,False,Morning,480,720
+S316,Store 316,sari-sari,14.67001,121.04761,False,Any time,480,1020
+S317,Store 317,sari-sari,14.65871,121.0107,False,Morning,480,720
+S318,Grocer 318,grocer,14.67781,121.04442,False,Afternoon receiving,780,960
+S319,Store 319,sari-sari,14.66669,121.0545,True,Afternoon,780,1020
+S320,Store 320,sari-sari,14.69076,121.02204,False,Afternoon,780,1020
+S321,Sari-sari 321,sari-sari,14.66692,121.04121,False,Any time,480,1020
+S322,Mini-mart 322,sari-sari,14.69294,121.01885,True,Morning,480,720
+S323,Sari-sari 323,sari-sari,14.64567,121.02879,True,Afternoon,780,1020
+S324,Sari-sari 324,sari-sari,14.68853,121.05173,False,Any time,480,1020
+S325,Grocer 325,grocer,14.66721,121.04841,True,Morning receiving,420,660
+S326,Store 326,sari-sari,14.66721,121.01218,True,Morning,480,720
+S327,Store 327,sari-sari,14.66555,121.04307,False,Morning,480,720
+S328,Store 328,sari-sari,14.66138,121.01974,False,Morning,480,720
+S329,Mini-mart 329,sari-sari,14.66084,121.0536,False,Any time,480,1020
+S330,Sari-sari 330,sari-sari,14.6592,121.0393,True,Any time,480,1020
+S331,Store 331,sari-sari,14.66851,121.04326,True,Any time,480,1020
+S332,Grocer 332,grocer,14.66272,121.04041,True,Morning receiving,420,660
+S333,Mini-mart 333,sari-sari,14.65055,121.02834,False,Any time,480,1020
+S334,Mini-mart 334,sari-sari,14.65886,121.01454,True,Morning,480,720
+S335,Sari-sari 335,sari-sari,14.68464,121.02594,False,Any time,480,1020
+S336,Mini-mart 336,sari-sari,14.6644,121.02246,False,Afternoon,780,1020
+S337,Store 337,sari-sari,14.69136,121.01493,False,Any time,480,1020
+S338,Store 338,sari-sari,14.698,121.04022,False,Any time,480,1020
+S339,Mini-mart 339,sari-sari,14.64103,121.04111,False,Any time,480,1020
+S340,Mini-mart 340,sari-sari,14.66049,121.0363,False,Afternoon,780,1020
+S341,Store 341,sari-sari,14.64541,121.00732,False,Any time,480,1020
+S342,Mini-mart 342,sari-sari,14.68662,121.05593,True,Morning,480,720
+S343,Sari-sari 343,sari-sari,14.65085,121.05249,False,Any time,480,1020
+S344,Grocer 344,grocer,14.6626,121.02785,True,Afternoon receiving,780,960
+S345,Store 345,sari-sari,14.66377,121.03789,False,Morning,480,720
+S346,Store 346,sari-sari,14.68362,121.04573,True,Morning,480,720
+S347,Mini-mart 347,sari-sari,14.67165,121.05735,True,Morning,480,720
+S348,Sari-sari 348,sari-sari,14.66555,121.03843,True,Any time,480,1020
+S349,Mini-mart 349,sari-sari,14.65308,121.03283,False,Any time,480,1020
+S350,Mini-mart 350,sari-sari,14.69943,121.02604,True,Any time,480,1020
+S351,Store 351,sari-sari,14.66645,121.05154,False,Morning,480,720
+S352,Sari-sari 352,sari-sari,14.67991,121.02406,True,Any time,480,1020
+S353,Sari-sari 353,sari-sari,14.66837,121.04313,True,Morning,480,720
+S354,Store 354,sari-sari,14.68105,121.02455,True,Morning,480,720
+S355,Store 355,sari-sari,14.69084,121.04016,False,Morning,480,720
+S356,Store 356,sari-sari,14.68163,121.02392,True,Morning,480,720
+S357,Mini-mart 357,sari-sari,14.6453,121.04185,False,Morning,480,720
+S358,Sari-sari 358,sari-sari,14.65836,121.05548,True,Afternoon,780,1020
+S359,Sari-sari 359,sari-sari,14.68008,121.02086,False,Any time,480,1020
+S360,Store 360,sari-sari,14.64364,121.02691,True,Afternoon,780,1020
+S361,Grocer 361,grocer,14.69327,121.03847,False,Morning receiving,420,660
+S362,Mini-mart 362,sari-sari,14.66455,121.02381,True,Any time,480,1020
+S363,Mini-mart 363,sari-sari,14.65409,121.02866,True,Any time,480,1020
+S364,Store 364,sari-sari,14.68539,121.00053,False,Morning,480,720
+S365,Store 365,sari-sari,14.69165,121.06,True,Any time,480,1020
+S366,Grocer 366,grocer,14.69925,121.0533,False,Afternoon receiving,780,960
+S367,Store 367,sari-sari,14.68491,121.02862,True,Any time,480,1020
+S368,Store 368,sari-sari,14.66587,121.01376,False,Afternoon,780,1020
+S369,Mini-mart 369,sari-sari,14.67516,121.00395,True,Any time,480,1020
+S370,Store 370,sari-sari,14.64131,121.00103,False,Morning,480,720
+S371,Sari-sari 371,sari-sari,14.66349,121.01635,False,Any time,480,1020
+S372,Sari-sari 372,sari-sari,14.65422,121.02524,False,Any time,480,1020
+S373,Store 373,sari-sari,14.65655,121.00832,False,Any time,480,1020
+S374,Mini-mart 374,sari-sari,14.68199,121.04236,False,Any time,480,1020
+S375,Grocer 375,grocer,14.65989,121.01239,False,Afternoon receiving,780,960
+S376,Sari-sari 376,sari-sari,14.67545,121.04517,True,Any time,480,1020
+S377,Grocer 377,grocer,14.68564,121.03333,False,Morning receiving,420,660
+S378,Store 378,sari-sari,14.67544,121.04534,True,Morning,480,720
+S379,Mini-mart 379,sari-sari,14.68132,121.00515,False,Morning,480,720
+S380,Sari-sari 380,sari-sari,14.67936,121.00498,False,Afternoon,780,1020
+S381,Mini-mart 381,sari-sari,14.68607,121.04133,True,Any time,480,1020
+S382,Store 382,sari-sari,14.65216,121.0486,False,Morning,480,720
+S383,Grocer 383,grocer,14.66043,121.04985,False,Morning receiving,420,660
+S384,Store 384,sari-sari,14.68861,121.01113,False,Morning,480,720
+S385,Grocer 385,grocer,14.64204,121.03165,False,Afternoon receiving,780,960
+S386,Mini-mart 386,sari-sari,14.66021,121.04573,False,Any time,480,1020
+S387,Mini-mart 387,sari-sari,14.66689,121.05071,True,Afternoon,780,1020
+S388,Store 388,sari-sari,14.64942,121.00357,False,Any time,480,1020
+S389,Store 389,sari-sari,14.66012,121.01808,False,Morning,480,720
+S390,Mini-mart 390,sari-sari,14.68263,121.03952,False,Any time,480,1020
+S391,Store 391,sari-sari,14.64687,121.0064,False,Afternoon,780,1020
+S392,Grocer 392,grocer,14.68629,121.05242,False,Morning receiving,420,660
+S393,Sari-sari 393,sari-sari,14.67895,121.00982,True,Morning,480,720
+S394,Mini-mart 394,sari-sari,14.6806,121.04123,True,Afternoon,780,1020
+S395,Store 395,sari-sari,14.68197,121.03899,True,Any time,480,1020
+S396,Mini-mart 396,sari-sari,14.65707,121.00663,False,Any time,480,1020
+S397,Mini-mart 397,sari-sari,14.64081,121.03423,False,Morning,480,720
+S398,Grocer 398,grocer,14.67808,121.03231,False,Afternoon receiving,780,960
+S399,Grocer 399,grocer,14.66275,121.02849,False,Morning receiving,420,660
+S400,Store 400,sari-sari,14.65908,121.00994,False,Morning,480,720
+S401,Store 401,sari-sari,14.68767,121.05402,False,Any time,480,1020
+S402,Mini-mart 402,sari-sari,14.66514,121.04512,False,Any time,480,1020
+S403,Store 403,sari-sari,14.6877,121.01984,False,Any time,480,1020
+S404,Store 404,sari-sari,14.66534,121.01397,True,Any time,480,1020
+S405,Sari-sari 405,sari-sari,14.68282,121.0242,False,Any time,480,1020
+S406,Mini-mart 406,sari-sari,14.66065,121.01868,True,Any time,480,1020
+S407,Sari-sari 407,sari-sari,14.64071,121.05756,False,Any time,480,1020
+S408,Sari-sari 408,sari-sari,14.64977,121.0061,False,Morning,480,720
+S409,Sari-sari 409,sari-sari,14.66415,121.02522,False,Any time,480,1020
+S410,Grocer 410,grocer,14.66343,121.04866,False,Afternoon receiving,780,960
+S411,Grocer 411,grocer,14.6756,121.04436,True,Afternoon receiving,780,960
+S412,Store 412,sari-sari,14.68747,121.04044,False,Any time,480,1020
+S413,Sari-sari 413,sari-sari,14.67957,121.01267,False,Morning,480,720
+S414,Mini-mart 414,sari-sari,14.646,121.01913,False,Afternoon,780,1020
+S415,Mini-mart 415,sari-sari,14.67015,121.05978,False,Morning,480,720
+S416,Sari-sari 416,sari-sari,14.67804,121.01606,False,Morning,480,720
+S417,Grocer 417,grocer,14.66611,121.03071,True,Afternoon receiving,780,960
+S418,Sari-sari 418,sari-sari,14.6542,121.05423,False,Morning,480,720
+S419,Sari-sari 419,sari-sari,14.64478,121.05233,False,Any time,480,1020
+S420,Sari-sari 420,sari-sari,14.66922,121.01499,True,Any time,480,1020
+S421,Mini-mart 421,sari-sari,14.68394,121.01703,False,Morning,480,720
+S422,Mini-mart 422,sari-sari,14.67897,121.01948,False,Any time,480,1020
+S423,Store 423,sari-sari,14.67789,121.04809,True,Any time,480,1020
+S424,Mini-mart 424,sari-sari,14.65127,121.00588,True,Any time,480,1020
+S425,Grocer 425,grocer,14.66494,121.00581,True,Morning receiving,420,660
+S426,Grocer 426,grocer,14.67898,121.05105,False,Morning receiving,420,660
+S427,Grocer 427,grocer,14.6601,121.03427,False,Afternoon receiving,780,960
+S428,Mini-mart 428,sari-sari,14.67685,121.04077,False,Any time,480,1020
+S429,Grocer 429,grocer,14.66463,121.02051,False,Morning receiving,420,660
+S430,Store 430,sari-sari,14.68892,121.05459,False,Morning,480,720
+S431,Store 431,sari-sari,14.64197,121.03358,True,Afternoon,780,1020
+S432,Store 432,sari-sari,14.6587,121.023,False,Morning,480,720
+S433,Sari-sari 433,sari-sari,14.66558,121.05157,True,Morning,480,720
+S434,Mini-mart 434,sari-sari,14.67749,121.00795,False,Morning,480,720
+S435,Mini-mart 435,sari-sari,14.68957,121.0477,False,Any time,480,1020
+S436,Grocer 436,grocer,14.68188,121.05356,False,Afternoon receiving,780,960
+S437,Store 437,sari-sari,14.66167,121.03593,False,Afternoon,780,1020
+S438,Mini-mart 438,sari-sari,14.66779,121.03703,False,Morning,480,720
+S439,Mini-mart 439,sari-sari,14.66468,121.05569,True,Afternoon,780,1020
+S440,Store 440,sari-sari,14.65831,121.01499,False,Any time,480,1020
+S441,Store 441,sari-sari,14.64105,121.01411,False,Afternoon,780,1020
+S442,Store 442,sari-sari,14.66502,121.00951,False,Morning,480,720
+S443,Mini-mart 443,sari-sari,14.68483,121.03661,False,Any time,480,1020
+S444,Sari-sari 444,sari-sari,14.65166,121.0519,False,Morning,480,720
+S445,Grocer 445,grocer,14.65373,121.02274,True,Afternoon receiving,780,960
+S446,Sari-sari 446,sari-sari,14.68415,121.0291,False,Morning,480,720
+S447,Sari-sari 447,sari-sari,14.69147,121.01866,True,Any time,480,1020
+S448,Sari-sari 448,sari-sari,14.65567,121.00363,False,Any time,480,1020
+S449,Sari-sari 449,sari-sari,14.65497,121.03343,True,Morning,480,720
+S450,Store 450,sari-sari,14.66481,121.03736,False,Morning,480,720
+S451,Grocer 451,grocer,14.66595,121.01516,False,Afternoon receiving,780,960
+S452,Sari-sari 452,sari-sari,14.66609,121.04561,False,Any time,480,1020
+S453,Grocer 453,grocer,14.68565,121.04707,False,Afternoon receiving,780,960
+S454,Store 454,sari-sari,14.66074,121.03536,True,Afternoon,780,1020
+S455,Sari-sari 455,sari-sari,14.65997,121.03653,True,Any time,480,1020
+S456,Store 456,sari-sari,14.68473,121.03279,True,Any time,480,1020
+S457,Store 457,sari-sari,14.67279,121.04354,False,Any time,480,1020
+S458,Mini-mart 458,sari-sari,14.68005,121.01853,False,Afternoon,780,1020
+S459,Store 459,sari-sari,14.67948,121.04497,True,Morning,480,720
+S460,Store 460,sari-sari,14.6667,121.02125,False,Morning,480,720
+S461,Mini-mart 461,sari-sari,14.65914,121.01159,False,Morning,480,720
+S462,Store 462,sari-sari,14.68548,121.03653,True,Morning,480,720
+S463,Grocer 463,grocer,14.65192,121.00637,False,Morning receiving,420,660
+S464,Store 464,sari-sari,14.68109,121.01461,False,Afternoon,780,1020
+S465,Sari-sari 465,sari-sari,14.66283,121.00334,False,Any time,480,1020
+S466,Store 466,sari-sari,14.6806,121.05261,False,Morning,480,720
+S467,Mini-mart 467,sari-sari,14.66415,121.01362,True,Morning,480,720
+S468,Sari-sari 468,sari-sari,14.65619,121.03302,False,Afternoon,780,1020
+S469,Sari-sari 469,sari-sari,14.66609,121.01756,True,Morning,480,720
+S470,Store 470,sari-sari,14.6593,121.03194,True,Morning,480,720
+S471,Grocer 471,grocer,14.64969,121.05598,False,Afternoon receiving,780,960
+S472,Store 472,sari-sari,14.64884,121.03429,False,Any time,480,1020
+S473,Store 473,sari-sari,14.66074,121.00833,False,Morning,480,720
+S474,Sari-sari 474,sari-sari,14.65207,121.02978,True,Any time,480,1020
+S475,Store 475,sari-sari,14.69082,121.05002,False,Any time,480,1020
+S476,Mini-mart 476,sari-sari,14.66848,121.04328,False,Afternoon,780,1020
+S477,Mini-mart 477,sari-sari,14.66245,121.0165,False,Any time,480,1020
+S478,Mini-mart 478,sari-sari,14.66428,121.04533,False,Morning,480,720
+S479,Grocer 479,grocer,14.68529,121.01056,False,Afternoon receiving,780,960
+S480,Mini-mart 480,sari-sari,14.68858,121.05079,False,Morning,480,720
+S481,Store 481,sari-sari,14.67675,121.01886,True,Morning,480,720
+S482,Sari-sari 482,sari-sari,14.65585,121.03299,False,Morning,480,720
+S483,Store 483,sari-sari,14.6891,121.01547,False,Any time,480,1020
+S484,Mini-mart 484,sari-sari,14.68642,121.0442,False,Any time,480,1020
+S485,Store 485,sari-sari,14.68317,121.00754,True,Morning,480,720
+S486,Grocer 486,grocer,14.68542,121.00826,False,Afternoon receiving,780,960
+S487,Store 487,sari-sari,14.64384,121.01634,True,Morning,480,720
+S488,Sari-sari 488,sari-sari,14.64881,121.03511,False,Any time,480,1020
+S489,Store 489,sari-sari,14.68889,121.03465,True,Any time,480,1020
+S490,Mini-mart 490,sari-sari,14.6634,121.01157,True,Any time,480,1020
+S491,Sari-sari 491,sari-sari,14.67462,121.04711,False,Any time,480,1020
+S492,Mini-mart 492,sari-sari,14.66734,121.03507,False,Morning,480,720
+S493,Grocer 493,grocer,14.66399,121.02552,True,Morning receiving,420,660
+S494,Sari-sari 494,sari-sari,14.64968,121.04071,False,Afternoon,780,1020
+S495,Store 495,sari-sari,14.66202,121.01057,False,Any time,480,1020
+S496,Sari-sari 496,sari-sari,14.68005,121.03337,False,Any time,480,1020
+S497,Store 497,sari-sari,14.67094,121.01127,True,Morning,480,720
+S498,Sari-sari 498,sari-sari,14.68005,121.03245,False,Any time,480,1020
+S499,Mini-mart 499,sari-sari,14.65869,121.00016,False,Morning,480,720
+S500,Store 500,sari-sari,14.68254,121.04479,False,Afternoon,780,1020
+S501,Mini-mart 501,sari-sari,14.68979,121.04193,False,Afternoon,780,1020
+S502,Mini-mart 502,sari-sari,14.6709,121.00896,False,Any time,480,1020
+S503,Sari-sari 503,sari-sari,14.67302,121.00868,False,Any time,480,1020
+S504,Mini-mart 504,sari-sari,14.6855,121.05016,True,Any time,480,1020
+S505,Sari-sari 505,sari-sari,14.68437,121.0376,False,Any time,480,1020
+S506,Sari-sari 506,sari-sari,14.68899,121.04373,False,Any time,480,1020
+S507,Sari-sari 507,sari-sari,14.66505,121.0493,False,Any time,480,1020
+S508,Sari-sari 508,sari-sari,14.67915,121.03241,True,Afternoon,780,1020
+S509,Grocer 509,grocer,14.69931,121.05443,False,Morning receiving,420,660
+S510,Mini-mart 510,sari-sari,14.66113,121.05719,True,Any time,480,1020
+S511,Store 511,sari-sari,14.66623,121.05867,False,Morning,480,720
+S512,Sari-sari 512,sari-sari,14.6881,121.05326,False,Any time,480,1020
+S513,Mini-mart 513,sari-sari,14.6584,121.00567,False,Morning,480,720
+S514,Grocer 514,grocer,14.6773,121.01619,False,Morning receiving,420,660
+S515,Store 515,sari-sari,14.68811,121.04651,True,Morning,480,720
+S516,Grocer 516,grocer,14.6785,121.05013,True,Afternoon receiving,780,960
+S517,Sari-sari 517,sari-sari,14.64305,121.01105,True,Any time,480,1020
+S518,Store 518,sari-sari,14.68562,121.05322,False,Morning,480,720
+S519,Sari-sari 519,sari-sari,14.67087,121.04264,True,Any time,480,1020
+S520,Sari-sari 520,sari-sari,14.66247,121.01397,False,Afternoon,780,1020
+S521,Grocer 521,grocer,14.69483,121.01946,True,Morning receiving,420,660
+S522,Store 522,sari-sari,14.67468,121.01248,False,Any time,480,1020
+S523,Sari-sari 523,sari-sari,14.66191,121.01481,False,Morning,480,720
+S524,Sari-sari 524,sari-sari,14.65677,121.04085,False,Any time,480,1020
+S525,Mini-mart 525,sari-sari,14.64669,121.03136,False,Any time,480,1020
+S526,Store 526,sari-sari,14.65461,121.03822,True,Any time,480,1020
+S527,Mini-mart 527,sari-sari,14.68202,121.02122,False,Any time,480,1020
+S528,Grocer 528,grocer,14.66667,121.039,False,Morning receiving,420,660
+S529,Store 529,sari-sari,14.67188,121.04298,False,Morning,480,720
+S530,Mini-mart 530,sari-sari,14.67683,121.01526,False,Any time,480,1020
+S531,Mini-mart 531,sari-sari,14.68725,121.03699,False,Any time,480,1020
+S532,Grocer 532,grocer,14.65257,121.01667,False,Morning receiving,420,660
+S533,Mini-mart 533,sari-sari,14.68171,121.015,True,Morning,480,720
+S534,Mini-mart 534,sari-sari,14.68786,121.04655,False,Afternoon,780,1020
+S535,Mini-mart 535,sari-sari,14.64168,121.03904,False,Any time,480,1020
+S536,Mini-mart 536,sari-sari,14.68879,121.02581,True,Morning,480,720
+S537,Store 537,sari-sari,14.65864,121.01037,False,Afternoon,780,1020
+S538,Grocer 538,grocer,14.68236,121.00411,True,Morning receiving,420,660
+S539,Store 539,sari-sari,14.66288,121.03093,True,Any time,480,1020
+S540,Store 540,sari-sari,14.66064,121.00353,False,Morning,480,720
+S541,Store 541,sari-sari,14.66272,121.05238,True,Morning,480,720
+S542,Mini-mart 542,sari-sari,14.65379,121.0324,False,Any time,480,1020
+S543,Store 543,sari-sari,14.64038,121.05173,False,Morning,480,720
+S544,Store 544,sari-sari,14.69963,121.02277,True,Any time,480,1020
+S545,Grocer 545,grocer,14.66278,121.0468,False,Afternoon receiving,780,960
+S546,Mini-mart 546,sari-sari,14.66638,121.04184,False,Afternoon,780,1020
+S547,Mini-mart 547,sari-sari,14.6522,121.02152,False,Afternoon,780,1020
+S548,Sari-sari 548,sari-sari,14.69127,121.0174,False,Afternoon,780,1020
+S549,Sari-sari 549,sari-sari,14.65088,121.02474,True,Any time,480,1020
+S550,Store 550,sari-sari,14.68334,121.01603,False,Any time,480,1020
+S551,Sari-sari 551,sari-sari,14.67855,121.02371,False,Morning,480,720
+S552,Store 552,sari-sari,14.6671,121.04002,False,Morning,480,720
+S553,Sari-sari 553,sari-sari,14.67863,121.04939,False,Any time,480,1020
+S554,Sari-sari 554,sari-sari,14.67359,121.01541,False,Morning,480,720
+S555,Store 555,sari-sari,14.66824,121.03562,False,Any time,480,1020
+S556,Mini-mart 556,sari-sari,14.64123,121.03512,False,Morning,480,720
+S557,Sari-sari 557,sari-sari,14.66062,121.05865,False,Any time,480,1020
+S558,Store 558,sari-sari,14.65262,121.00632,False,Any time,480,1020
+S559,Sari-sari 559,sari-sari,14.6473,121.05326,True,Afternoon,780,1020
+S560,Sari-sari 560,sari-sari,14.68473,121.02067,False,Morning,480,720
+S561,Sari-sari 561,sari-sari,14.68563,121.01488,True,Any time,480,1020
+S562,Grocer 562,grocer,14.66366,121.0472,False,Morning receiving,420,660
+S563,Grocer 563,grocer,14.6569,121.0305,False,Afternoon receiving,780,960
+S564,Store 564,sari-sari,14.67446,121.0451,False,Morning,480,720
+S565,Mini-mart 565,sari-sari,14.67797,121.01642,True,Any time,480,1020
+S566,Grocer 566,grocer,14.68842,121.0052,False,Morning receiving,420,660
+S567,Store 567,sari-sari,14.69436,121.04458,True,Any time,480,1020
+S568,Grocer 568,grocer,14.64361,121.04887,False,Afternoon receiving,780,960
+S569,Store 569,sari-sari,14.68141,121.00465,False,Any time,480,1020
+S570,Mini-mart 570,sari-sari,14.68129,121.01946,False,Morning,480,720
+S571,Grocer 571,grocer,14.69819,121.01094,False,Morning receiving,420,660
+S572,Store 572,sari-sari,14.68389,121.02325,True,Any time,480,1020
+S573,Store 573,sari-sari,14.66052,121.00441,False,Afternoon,780,1020
+S574,Store 574,sari-sari,14.66577,121.00671,False,Morning,480,720
+S575,Sari-sari 575,sari-sari,14.66595,121.03926,False,Any time,480,1020
+S576,Grocer 576,grocer,14.68274,121.01468,False,Afternoon receiving,780,960
+S577,Grocer 577,grocer,14.65651,121.03585,False,Afternoon receiving,780,960
+S578,Grocer 578,grocer,14.65058,121.04092,False,Afternoon receiving,780,960
+S579,Mini-mart 579,sari-sari,14.68109,121.04853,True,Morning,480,720
+S580,Mini-mart 580,sari-sari,14.68889,121.0561,True,Any time,480,1020
+S581,Mini-mart 581,sari-sari,14.64456,121.04009,False,Morning,480,720
+S582,Store 582,sari-sari,14.66911,121.04939,True,Any time,480,1020
+S583,Mini-mart 583,sari-sari,14.6483,121.03048,True,Any time,480,1020
+S584,Grocer 584,grocer,14.66286,121.03189,True,Morning receiving,420,660
+S585,Store 585,sari-sari,14.65363,121.04452,False,Afternoon,780,1020
+S586,Store 586,sari-sari,14.66098,121.02309,False,Any time,480,1020
+S587,Store 587,sari-sari,14.69527,121.0223,False,Any time,480,1020
+S588,Store 588,sari-sari,14.65569,121.01042,False,Morning,480,720
+S589,Grocer 589,grocer,14.6687,121.04066,False,Afternoon receiving,780,960
+S590,Grocer 590,grocer,14.66232,121.03919,False,Morning receiving,420,660
+S591,Mini-mart 591,sari-sari,14.6543,121.04999,True,Any time,480,1020
+S592,Store 592,sari-sari,14.68671,121.05282,True,Any time,480,1020
+S593,Sari-sari 593,sari-sari,14.64679,121.00692,False,Morning,480,720
+S594,Sari-sari 594,sari-sari,14.66558,121.05034,True,Any time,480,1020
+S595,Store 595,sari-sari,14.68409,121.04294,False,Any time,480,1020
+S596,Mini-mart 596,sari-sari,14.69134,121.04776,True,Any time,480,1020
+S597,Sari-sari 597,sari-sari,14.68219,121.05384,False,Morning,480,720
+S598,Sari-sari 598,sari-sari,14.6941,121.04951,True,Any time,480,1020
+S599,Sari-sari 599,sari-sari,14.66782,121.04174,False,Morning,480,720
+S600,Grocer 600,grocer,14.66615,121.01323,False,Afternoon receiving,780,960
