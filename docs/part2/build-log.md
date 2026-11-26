@@ -86,3 +86,8 @@ The last row was already the demo's main point: the normal-season fleet can't co
   - Three numbered buttons replace the controls and follow the demo: normal day, peak day with the normal fleet, peak day with the recipe fleet. Each shows one sentence on what is being tested. The + / − fleet controls moved into a closed "Try your own fleet" panel.
   - The verdict is the headline, in plain words, above the five measures from the brief (vehicles used, time on the road, distance, on-time rate, cost).
   - Vehicles are named in plain words everywhere ("refrigerated van" and "dry truck"; Van 1, Truck 1). The map has a legend, the vehicle list shows a fill bar, and idle vehicles are grouped on one line. The assumptions moved into an "About this data" panel.
+- Ben Joseph Ricafrente found the page still too busy ("a lot of texts/square tiles") and asked for a simpler mock-up. He approved a one-screen version, which replaced the page above:
+  - A narrow panel on the left and the map on the right, with no scrolling on a laptop screen.
+  - Each vehicle is drawn as an icon: filled if it went out, faded if it stayed at the depot. Each vehicle type gets one tag (About right, Too small or Too big) and one short line.
+  - Four plain numbers without boxes: delivered on time, time on the road, distance, cost. With the vehicle icons, these cover the five measures in the brief.
+  - Removed: the context cards, the vehicle list, the "Try your own fleet" and "About this data" panels. The assumptions stay in `docs/part2/data-assumptions.md`.

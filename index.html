@@ -9,108 +9,32 @@
 <link rel="stylesheet" href="app/style.css">
 </head>
 <body>
-<header class="top">
-  <svg class="top-icon" aria-hidden="true" width="56" height="56" viewBox="0 0 64 64"><rect x="4" y="18" width="34" height="24" rx="3" fill="#95A78D"/><path d="M38 26 h10 l8 8 v8 h-18 z" fill="#F87666"/><circle cx="16" cy="46" r="5" fill="#2C3229"/><circle cx="46" cy="46" r="5" fill="#2C3229"/></svg>
-  <div>
-    <p class="eyebrow">Locus presales assignment · Part 2 prototype · Ben Joseph Ricafrente</p>
+<div class="app">
+  <aside class="side">
+    <p class="eyebrow">Locus · Part 2 prototype</p>
     <h1>Is this fleet the right size?</h1>
-    <p class="sub">A dispatch planner for one distributor in Quezon City. It plans a full day of deliveries with the fleet from my Part 1 recipe, then shows whether there are too few or too many vehicles. All data is made up for the demo.</p>
-  </div>
-</header>
+    <p class="sub">One Quezon City distributor, ~600 stores. Made-up data.</p>
 
-<section class="context" aria-label="Context">
-  <div class="ctx-card">
-    <p class="ctx-label">The situation</p>
-    <p>One distributor delivers to about 600 sari-sari stores, minimarts and grocers. Each day, some of them order.</p>
-    <div class="fleet-key">
-      <div><svg aria-hidden="true" width="34" height="34" viewBox="0 0 64 64"><rect x="4" y="20" width="36" height="22" rx="5" fill="#95A78D"/><path d="M40 28 h8 l8 7 v7 h-16 z" fill="#F87666"/><path d="M22 25 v12 M16.8 28 l10.4 6 M16.8 34 l10.4 -6" stroke="#FBFCF9" stroke-width="2.5" stroke-linecap="round"/><circle cx="16" cy="46" r="5" fill="#2C3229"/><circle cx="46" cy="46" r="5" fill="#2C3229"/></svg>
-        <span><b>Refrigerated vans (A)</b><br>Ice cream only · 1,000 kg</span></div>
-      <div><svg aria-hidden="true" width="34" height="34" viewBox="0 0 64 64"><rect x="4" y="18" width="34" height="24" rx="3" fill="#95A78D"/><path d="M38 26 h10 l8 8 v8 h-18 z" fill="#F87666"/><circle cx="16" cy="46" r="5" fill="#2C3229"/><circle cx="46" cy="46" r="5" fill="#2C3229"/></svg>
-        <span><b>Dry trucks (B)</b><br>Everything else · 4,000 kg</span></div>
-    </div>
-  </div>
-  <div class="ctx-card">
-    <p class="ctx-label">The question</p>
-    <p>Does the distributor have enough vans and trucks to deliver every order on time, without paying for vehicles that sit idle?</p>
-  </div>
-  <div class="ctx-card">
-    <p class="ctx-label">How to read it</p>
-    <ul class="read-key">
-      <li><span class="dot good"></span><span><b>About right:</b> every delivery made, at most 1 spare (the backup)</span></li>
-      <li><span class="dot crit"></span><span><b>Too small:</b> some stores miss their delivery</span></li>
-      <li><span class="dot warn"></span><span><b>Too big:</b> more vehicles idle than the 1 backup</span></li>
-    </ul>
-  </div>
-</section>
+    <div class="steps" id="steps" role="radiogroup" aria-label="Pick a day"></div>
+    <p class="caption" id="caption"></p>
 
-<section class="story" aria-label="Pick a day">
-  <p class="ctx-label">Pick a day to test</p>
-  <div class="steps" role="radiogroup" id="steps"></div>
-  <p class="caption" id="caption"></p>
-</section>
+    <div id="verdicts"></div>
 
-<section class="answer" id="answer" aria-live="polite"></section>
+    <dl class="stats" id="stats"></dl>
 
-<section class="kpis" id="kpis"></section>
-
-<section class="main">
-  <div class="map-wrap">
-    <div class="legend" aria-label="Map legend">
-      <span><i class="lg-depot"></i>Depot</span>
-      <span><i class="lg-line dashed"></i>Van route (ice cream)</span>
-      <span><i class="lg-line"></i>Truck route (dry goods)</span>
-      <span><i class="lg-missed"></i>Missed delivery</span>
-      <span class="lg-note">Each colour is one vehicle. Lines join stops in delivery order.</span>
-    </div>
-    <div id="map" role="img" aria-label="Map of the day's routes"></div>
-  </div>
-  <aside class="routes">
-    <h2>Each vehicle's day</h2>
-    <p class="small">Bar = how full the vehicle leaves the depot. Click a vehicle to highlight its route.</p>
-    <div id="unserved"></div>
-    <div id="route-list"></div>
+    <p class="fine">Vans carry ice cream only; trucks carry everything else. About right = every delivery made, at most 1 spare (the backup).<br>Ben Joseph Ricafrente · synthetic data</p>
   </aside>
-</section>
 
-<section class="extras">
-  <details class="panel" id="custom">
-    <summary>Try your own fleet</summary>
-    <div class="controls">
-      <div class="ctl">
-        <span class="ctl-label">Day</span>
-        <div class="seg" role="radiogroup" id="scenario">
-          <button role="radio" data-s="normal" aria-checked="true">Normal day</button>
-          <button role="radio" data-s="peak" aria-checked="false">Peak day</button>
-        </div>
-      </div>
-      <div class="ctl">
-        <span class="ctl-label">Refrigerated vans (A)</span>
-        <div class="stepper"><button data-v="A" data-d="-1" aria-label="One fewer van">−</button><output id="fleet-A">0</output><button data-v="A" data-d="1" aria-label="One more van">+</button></div>
-      </div>
-      <div class="ctl">
-        <span class="ctl-label">Dry trucks (B)</span>
-        <div class="stepper"><button data-v="B" data-d="-1" aria-label="One fewer truck">−</button><output id="fleet-B">0</output><button data-v="B" data-d="1" aria-label="One more truck">+</button></div>
-      </div>
+  <main class="map-area">
+    <div id="map" role="img" aria-label="Map of the day's routes"></div>
+    <div class="legend">
+      <span><i class="lg-depot"></i>Depot</span>
+      <span><i class="lg-line dashed"></i>Van</span>
+      <span><i class="lg-line"></i>Truck</span>
+      <span><i class="lg-missed"></i>Missed</span>
     </div>
-  </details>
-  <details class="panel">
-    <summary>About this data</summary>
-    <div class="about">
-      <p>Everything here is synthetic, made up to look like a Quezon City distributor. The full list is in <code>docs/part2/data-assumptions.md</code>.</p>
-      <ul>
-        <li><b>Refrigerated van (A):</b> carries up to 1,000 kg, costs ₱2,500 a day plus ₱35 per km.</li>
-        <li><b>Dry truck (B):</b> carries up to 4,000 kg, costs ₱3,000 a day plus ₱25 per km.</li>
-        <li><b>Working day:</b> 7 AM to 5 PM. Each store has a delivery time window.</li>
-        <li><b>Time at each stop:</b> 15 minutes at a sari-sari store, 30 at a grocer, plus 5 minutes on peak days.</li>
-        <li><b>Traffic:</b> 18 km/h on normal days, 14 km/h on peak days. Road distance is estimated as 1.4 times the straight line.</li>
-        <li><b>Fleet sizes</b> come from my Part 1 recipe, run on five years of made-up order history.</li>
-      </ul>
-    </div>
-  </details>
-</section>
-
-<footer class="foot"><p>Map © OpenStreetMap contributors.</p></footer>
-
+  </main>
+</div>
 <script src="app/vendor/leaflet/leaflet.js"></script>
 <script src="app/data.js"></script>
 <script src="app/solver.js"></script>
