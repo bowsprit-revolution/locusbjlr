@@ -5,7 +5,7 @@
   const peso = n => "₱" + Math.round(n).toLocaleString("en-PH");
   const pct = n => Math.round(n * 100) + "%";
   const $ = id => document.getElementById(id);
-  const hhmm = m => { const h = Math.floor(m / 60), mm = Math.round(m % 60); return `${((h + 11) % 12) + 1}:${String(mm).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}`; };
+  const hhmm = t => { const m = Math.round(t), h = Math.floor(m / 60), mm = m % 60; return `${((h + 11) % 12) + 1}:${String(mm).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}`; };
   const vname = v => (v.type === "A" ? "Van " : "Truck ") + v.id.slice(1);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
   const recipeFleet = s => { const p = D.recipe.periods[D.scenarios[s].fleet_period]; return { A: p.A.fleet, B: p.B.fleet }; };
