@@ -91,3 +91,4 @@ The last row was already the demo's main point: the normal-season fleet can't co
   - Each vehicle is drawn as an icon: filled if it went out, faded if it stayed at the depot. Each vehicle type gets one tag (About right, Too small or Too big) and one short line.
   - Four plain numbers without boxes: delivered on time, time on the road, distance, cost. With the vehicle icons, these cover the five measures in the brief.
   - Removed: the context cards, the vehicle list, the "Try your own fleet" and "About this data" panels. The assumptions stay in `docs/part2/data-assumptions.md`.
+- New colour palette, chosen by Ben Joseph Ricafrente: Honeydew, Ash Grey, Grey Olive, Faded Copper and Sunlit Clay. It replaces the sage-and-coral palette across the app, the Part 1 PDF and the deck. Route colours and the missed-delivery red are unchanged.

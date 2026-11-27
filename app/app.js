@@ -18,16 +18,16 @@
   const state = { step: 0 };
 
   const icon = (code, used) => {
-    const main = used ? "#95A78D" : "none", acc = used ? "#F87666" : "none", st = used ? "none" : "#535C50";
+    const main = used ? "#808F87" : "none", acc = used ? "#F4B266" : "none", st = used ? "none" : "#56625B";
     return code === "A"
-      ? `<svg class="${used ? "" : "idle"}" width="28" height="22" viewBox="0 0 30 24" aria-hidden="true"><rect x="2" y="8" width="17" height="10" rx="2.5" fill="${main}" stroke="${st}" stroke-width="1.5"/><path d="M19 11h4l4 3.5v3.5h-8z" fill="${acc}" stroke="${st}" stroke-width="1.5"/><circle cx="8" cy="20" r="2.4" fill="#2C3229"/><circle cx="23" cy="20" r="2.4" fill="#2C3229"/></svg>`
-      : `<svg class="${used ? "" : "idle"}" width="32" height="23" viewBox="0 0 36 26" aria-hidden="true"><rect x="2" y="5" width="22" height="14" rx="1.5" fill="${main}" stroke="${st}" stroke-width="1.5"/><path d="M24 9h5l5 4.5v5.5h-10z" fill="${acc}" stroke="${st}" stroke-width="1.5"/><circle cx="9" cy="22" r="2.6" fill="#2C3229"/><circle cx="28" cy="22" r="2.6" fill="#2C3229"/></svg>`;
+      ? `<svg class="${used ? "" : "idle"}" width="28" height="22" viewBox="0 0 30 24" aria-hidden="true"><rect x="2" y="8" width="17" height="10" rx="2.5" fill="${main}" stroke="${st}" stroke-width="1.5"/><path d="M19 11h4l4 3.5v3.5h-8z" fill="${acc}" stroke="${st}" stroke-width="1.5"/><circle cx="8" cy="20" r="2.4" fill="#26302A"/><circle cx="23" cy="20" r="2.4" fill="#26302A"/></svg>`
+      : `<svg class="${used ? "" : "idle"}" width="32" height="23" viewBox="0 0 36 26" aria-hidden="true"><rect x="2" y="5" width="22" height="14" rx="1.5" fill="${main}" stroke="${st}" stroke-width="1.5"/><path d="M24 9h5l5 4.5v5.5h-10z" fill="${acc}" stroke="${st}" stroke-width="1.5"/><circle cx="9" cy="22" r="2.6" fill="#26302A"/><circle cx="28" cy="22" r="2.6" fill="#26302A"/></svg>`;
   };
 
   const map = L.map("map", { scrollWheelZoom: false, zoomControl: false, zoomSnap: 0.25 });
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: "© OpenStreetMap" }).addTo(map);
   const layer = L.layerGroup().addTo(map);
-  const depotIcon = L.divIcon({ className: "", html: '<div style="width:16px;height:16px;background:#2C3229;border:3px solid #FBFCF9;border-radius:3px"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
+  const depotIcon = L.divIcon({ className: "", html: '<div style="width:16px;height:16px;background:#26302A;border:3px solid #FBFDFA;border-radius:3px"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
   const colorFor = v => { const n = parseInt(v.id.slice(1), 10) - 1; return css(SERIES[v.type === "B" ? n % 8 : 7 - (n % 8)]); };
 
   function verdict(code, bt) {
@@ -63,10 +63,10 @@
       const pts = [[D.depot.lat, D.depot.lon]].concat(v.stops.map(s => [s.job.order.lat, s.job.order.lon]), [[D.depot.lat, D.depot.lon]]);
       L.polyline(pts, { color, weight: 2.5, opacity: 0.9, dashArray: v.type === "A" ? "6 5" : null }).addTo(layer);
       v.stops.forEach((s, n) => { const o = s.job.order;
-        L.circleMarker([o.lat, o.lon], { radius: 4.5, color: "#FBFCF9", weight: 1.5, fillColor: color, fillOpacity: 1 })
+        L.circleMarker([o.lat, o.lon], { radius: 4.5, color: "#FBFDFA", weight: 1.5, fillColor: color, fillOpacity: 1 })
           .bindTooltip(`<b>${vname(v)} · stop ${n + 1} of ${v.stops.length}</b><br>${o.name}<br>${s.job.kind === "frozen" ? "Ice cream" : "Dry goods"}: ${Math.round(s.job.kg)} kg<br>Wants delivery ${hhmm(o.window_start)}–${hhmm(o.window_end)}<br>Arrives ${hhmm(s.start)}${s.late ? ` · ${Math.round(s.late)} min late` : ""}`).addTo(layer); });
     });
-    res.unserved.forEach(j => L.circleMarker([j.order.lat, j.order.lon], { radius: 7, color: css("--crit"), weight: 3, fillColor: "#FBFCF9", fillOpacity: 1 }).bindTooltip("Missed: " + j.order.name).addTo(layer));
+    res.unserved.forEach(j => L.circleMarker([j.order.lat, j.order.lon], { radius: 7, color: css("--crit"), weight: 3, fillColor: "#FBFDFA", fillOpacity: 1 }).bindTooltip("Missed: " + j.order.name).addTo(layer));
     map.fitBounds(L.latLngBounds([[D.depot.lat, D.depot.lon]].concat(D.orders[st.s].map(o => [o.lat, o.lon]))), { padding: [30, 30] });
   }
   run();

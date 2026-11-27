@@ -1,8 +1,8 @@
 :root {
-  --bg: #F3F5F0; --surface: #FBFCF9; --surface-2: #E7ECE3; --border: #D3DACD;
-  --text: #2C3229; --text-2: #535C50; --accent: #B8473B;
-  --teal: #95A78D; --coral: #F87666;
-  --good: #5E8A57; --good-text: #3E5238; --warn: #C9922E; --warn-text: #7A5512; --crit: #E0604A; --crit-text: #A23A2C;
+  --bg: #F2F7F0; --surface: #FBFDFA; --surface-2: #E2EFDE; --border: #D2DED0;
+  --text: #26302A; --text-2: #56625B; --accent: #7E6532;
+  --teal: #808F87; --coral: #F4B266;
+  --good: #5E8A57; --good-text: #3F4F45; --warn: #C9922E; --warn-text: #7A5512; --crit: #E0604A; --crit-text: #A23A2C;
   --s1:#E0604A; --s2:#3A7DB5; --s3:#A87A10; --s4:#9A4F8E; --s5:#3F9460; --s6:#7266C9; --s7:#C2703E; --s8:#139A9A;
   --sans: 'Work Sans', Arial, sans-serif; --serif: 'Source Serif 4', Georgia, serif;
 }
@@ -29,7 +29,7 @@ h1 { font-size: 30px; font-weight: 400; letter-spacing: -0.4px; margin: -8px 0 0
 .vhead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .vname { font-weight: 500; } .vname small { font-weight: 400; color: var(--text-2); font-size: 14px; }
 .badge { font-weight: 600; font-size: 14px; padding: 2px 10px; border-radius: 999px; }
-.badge.good { background: #DDE6D8; color: var(--good-text); }
+.badge.good { background: #D5E6D0; color: var(--good-text); }
 .badge.warn { background: #F5E6C8; color: var(--warn-text); }
 .badge.crit { background: #FCE3DE; color: var(--crit-text); }
 .icons { display: flex; flex-wrap: wrap; gap: 4px; margin: 10px 0 6px; }
